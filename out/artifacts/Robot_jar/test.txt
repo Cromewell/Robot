@@ -1,0 +1,13 @@
+gui r
+delay 300
+string notepad
+delay 100
+enter
+delay 200
+string Y0u G07 h4ck3d!
+alt space right right right down enter
+tab tab
+delay 50
+string 100
+delay 50
+enter
