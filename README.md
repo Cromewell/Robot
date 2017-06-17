@@ -1,3 +1,3 @@
 # Robot
 
-A robot that can be scripted to do various task acting as a keyboard.
+A java-based robot that can be scripted to do various tasks acting as a keyboard.
