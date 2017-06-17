@@ -1,0 +1,15 @@
+mouse 10 10
+delay 500
+mouse 100 100
+delay 500
+mouse 150 150
+delay 500
+mouse 200 200
+delay 500
+mouse 789 835
+delay 2000
+delay 500
+mouse 0 0
+mouseD 789 835 5
+delay 100
+mouseD 747 845 5
