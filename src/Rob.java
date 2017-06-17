@@ -222,4 +222,19 @@ public class Rob extends Robot {
             keyRelease(key);
         }
     }
+
+    void moveMouseTo(int x, int y, int speed) {
+        Point location = MouseInfo.getPointerInfo().getLocation();
+
+        int n = speed / 5;
+
+        double dx = (x - location.x) / ((double) n);
+        double dy = (y - location.y) / ((double) n);
+        double dt = speed / ((double) n);
+
+        for (int step = 1; step <= n; step++) {
+            delay((int) dt);
+            mouseMove((int) (location.x + dx * step), (int) (location.y + dy * step));
+        }
+    }
 }

@@ -34,16 +34,10 @@ public class FileParser {
                     switch (line[i]) {
                         case "gui": {
                             toExecute.add(KeyEvent.VK_WINDOWS);
-                            if (debug) {
-                                System.out.println("press gui");
-                            }
                             break;
                         }
                         case "enter": {
                             toExecute.add(KeyEvent.VK_ENTER);
-                            if (debug) {
-                                System.out.println("press enter");
-                            }
                             break;
                         }
                         case "right": {
@@ -98,8 +92,9 @@ public class FileParser {
                             rob.typeString(builder.toString());
 
                             finishedLine = true;
+
                             if (debug) {
-                                System.out.println("write " + builder.toString());
+                                System.out.println("writing " + builder.toString());
                             }
                             break;
                         }
@@ -116,28 +111,54 @@ public class FileParser {
                             rob.typeKey(KeyEvent.VK_ENTER);
 
                             finishedLine = true;
+
                             if (debug) {
-                                System.out.println("write " + builder.toString());
+                                System.out.println("writing " + builder.toString());
                             }
                             break;
                         }
                         case "delay": {
+                            if (debug) {
+                                System.out.println("waiting " + line[1] + " ms");
+                            }
+
                             rob.delay(Integer.valueOf(line[1]));
                             finishedLine = true;
+                            break;
+                        }
+                        case "mouse": {
                             if (debug) {
-                                System.out.println("wait " + line[1] + " ms");
+                                System.out.println("setting mouse to " + line[1] + " x and " + line[2] + " y");
                             }
+
+                            rob.mouseMove(Integer.valueOf(line[1]), Integer.valueOf(line[2]));
+                            finishedLine = true;
+                            break;
+                        }
+                        case "mouseD": {
+                            if (debug) {
+                                System.out.println("moving mouse to " + line[1] + " x and " + line[2] + " y");
+                            }
+
+                            rob.moveMouseTo(Integer.valueOf(line[1]), Integer.valueOf(line[2]), Integer.valueOf(line[2]));
+                            finishedLine = true;
                             break;
                         }
                         default:
-                            toExecute.add(KeyEvent.getExtendedKeyCodeForChar(line[i].charAt(0)));
                             if (debug) {
-                                System.out.println("type " + line[i]);
+                                System.out.println("typing " + line[i]);
                             }
+
+                            toExecute.add(KeyEvent.getExtendedKeyCodeForChar(line[i].charAt(0)));
                             break;
                     }
                 }
                 rob.executeKeyChain(toExecute);
+                if (debug) {
+                    for (int key : toExecute) {
+                        System.out.println("pressing " + KeyEvent.getKeyText(key));
+                    }
+                }
                 toExecute.clear();
             }
         } catch (IOException e) {
