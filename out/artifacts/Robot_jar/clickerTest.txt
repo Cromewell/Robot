@@ -1,0 +1,2 @@
+delay 2000
+clicker 1000000 5

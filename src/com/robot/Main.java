@@ -1,3 +1,8 @@
+package com.robot;
+
+import org.jnativehook.GlobalScreen;
+import org.jnativehook.NativeHookException;
+
 import java.awt.*;
 import java.io.File;
 
@@ -7,6 +12,7 @@ import java.io.File;
  */
 public class Main {
     public static void main(String[] args) {
+
         Rob rob = null;
         File commandFile = new File(args[0]);
 
@@ -23,6 +29,6 @@ public class Main {
 
 
         //parse and execute script file//
-        FileParser.parseFile(commandFile, rob);
+        FileParser.parseFile(commandFile, rob, new InputManager());
     }
 }

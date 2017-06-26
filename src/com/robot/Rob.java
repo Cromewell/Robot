@@ -1,3 +1,5 @@
+package com.robot;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
@@ -191,6 +193,16 @@ public class Rob extends Robot {
     void typeKey(int keyCode) {
         keyPress(keyCode);
         keyRelease(keyCode);
+    }
+
+    /**
+     * Presses and releases a mouse button.
+     *
+     * @param buttonCode
+     */
+    void typeButton(int buttonCode) {
+        mousePress(buttonCode);
+        mouseRelease(buttonCode);
     }
 
     /**

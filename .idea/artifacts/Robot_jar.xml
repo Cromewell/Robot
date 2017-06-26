@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/Robot_jar</output-path>
     <root id="archive" name="Robot.jar">
       <element id="module-output" name="Robot" />
+      <element id="extracted-dir" path="E:/DOWNLOADS/jnativehook-2.1.0/jnativehook-2.1.0.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

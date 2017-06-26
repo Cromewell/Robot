@@ -1,6 +1,16 @@
+package com.robot;
+
+import org.jnativehook.GlobalScreen;
+import org.jnativehook.NativeHookException;
+import org.jnativehook.keyboard.NativeKeyListener;
+
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Created by Jo on 17.06.2017.
@@ -8,6 +18,8 @@ import java.util.ArrayList;
 public class FileParser {
 
     private static boolean debug = true;
+    private static boolean shouldExit = false;
+    private static boolean clicking = false;
 
     /**
      * Parses the sript file and executes the commands in it.
@@ -15,7 +27,7 @@ public class FileParser {
      * @param file
      * @param rob
      */
-    static void parseFile(File file, Rob rob) {
+    static void parseFile(File file, Rob rob, InputManager inputManager) {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String[] line;
             ArrayList<Integer> toExecute = new ArrayList<>();
@@ -144,6 +156,60 @@ public class FileParser {
                             finishedLine = true;
                             break;
                         }
+                        case "mouseL": {
+                            if (debug) {
+                                System.out.println("left mouse button clicked");
+                            }
+
+                            rob.typeButton(MouseEvent.BUTTON1);
+                            break;
+                        }
+                        case "mouseR": {
+                            if (debug) {
+                                System.out.println("right mouse button clicked");
+                            }
+
+                            rob.typeButton(MouseEvent.BUTTON2);
+                            break;
+                        }
+                        case "clicker": {
+                            if (debug) {
+                                System.out.println("clicker activated");
+                                System.out.println("clicks to go " + line[1] + " with a delay of " + line[2] + " ms");
+                            }
+
+                            try {
+                                // Get the logger for "org.jnativehook" and set the level to warning.
+                                Logger logger = Logger.getLogger(GlobalScreen.class.getPackage().getName());
+                                logger.setLevel(Level.OFF);
+
+                                // Don't forget to disable the parent handlers.
+                                logger.setUseParentHandlers(false);
+                                GlobalScreen.registerNativeHook();
+                            } catch (NativeHookException e) {
+                                e.printStackTrace();
+                            }
+                            GlobalScreen.addNativeKeyListener(inputManager);
+                            clicking = true;
+                            for (int j = 0; j < Integer.valueOf(line[1]); j++) {
+                                if (shouldExit) {
+                                    System.out.println("exit clicker loop");
+                                    break;
+                                }
+                                rob.typeButton(KeyEvent.BUTTON1_MASK);
+                                rob.delay(Integer.valueOf(line[2]));
+                            }
+
+                            try {
+                                GlobalScreen.unregisterNativeHook();
+                            } catch (NativeHookException e) {
+                                e.printStackTrace();
+                            }
+                            clicking = false;
+                            shouldExit = false;
+                            finishedLine = true;
+                            break;
+                        }
                         default:
                             if (debug) {
                                 System.out.println("typing " + line[i]);
@@ -164,5 +230,13 @@ public class FileParser {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public static boolean isClicking() {
+        return clicking;
+    }
+
+    public static void setShouldExit(boolean shouldExit) {
+        FileParser.shouldExit = shouldExit;
     }
 }
