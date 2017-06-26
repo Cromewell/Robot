@@ -5,9 +5,11 @@ delay 100
 enter
 delay 200
 string Y0u G07 h4ck3d!
-alt space right right right down enter
-tab tab
-delay 50
+alt 
+right right down down enter
+tab 
+tab
+delay 80
 string 100
 delay 50
 enter
