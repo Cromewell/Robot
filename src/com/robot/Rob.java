@@ -9,19 +9,15 @@ import java.util.ArrayList;
  * <p>
  * Holds extra methods for keyboard usage.
  */
-public class Rob extends Robot {
+class Rob extends Robot {
 
-    public Rob() throws AWTException {
-    }
-
-    public Rob(GraphicsDevice screen) throws AWTException {
-        super(screen);
+    Rob() throws AWTException {
     }
 
     /**
      * Used to type the given string on keyboard.
      *
-     * @param s
+     * @param s String to type
      */
     void typeString(String s) {
         for (int i = 0; i < s.length(); i++) {
@@ -188,7 +184,7 @@ public class Rob extends Robot {
     /**
      * Presses and releases a key.
      *
-     * @param keyCode
+     * @param keyCode Key to type
      */
     void typeKey(int keyCode) {
         keyPress(keyCode);
@@ -198,7 +194,7 @@ public class Rob extends Robot {
     /**
      * Presses and releases a mouse button.
      *
-     * @param buttonCode
+     * @param buttonCode Button to type
      */
     void typeButton(int buttonCode) {
         mousePress(buttonCode);
@@ -206,9 +202,9 @@ public class Rob extends Robot {
     }
 
     /**
-     * This function presses the given keays and releases them after pressing all.
+     * This function presses the given keys and releases them after pressing all.
      *
-     * @param keys
+     * @param keys Keys to execute
      */
     void executeKeyChain(int... keys) {
         for (int key : keys) {
@@ -223,7 +219,7 @@ public class Rob extends Robot {
     /**
      * This function presses the given keays and releases them after pressing all.
      *
-     * @param keys
+     * @param keys Keys to execute
      */
     void executeKeyChain(ArrayList<Integer> keys) {
         for (int key : keys) {

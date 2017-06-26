@@ -2,11 +2,9 @@ package com.robot;
 
 import org.jnativehook.GlobalScreen;
 import org.jnativehook.NativeHookException;
-import org.jnativehook.keyboard.NativeKeyListener;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -14,18 +12,19 @@ import java.util.logging.Logger;
 
 /**
  * Created by Jo on 17.06.2017.
+ * Parses the given file and executes the commandos.
  */
-public class FileParser {
+class FileParser {
 
-    private static boolean debug = true;
+    private static final boolean DEBUGGING = true;
     private static boolean shouldExit = false;
     private static boolean clicking = false;
 
     /**
-     * Parses the sript file and executes the commands in it.
+     * Parses the script file and executes the commands in it.
      *
-     * @param file
-     * @param rob
+     * @param file Roboscript file
+     * @param rob  Executing robot
      */
     static void parseFile(File file, Rob rob, InputManager inputManager) {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
@@ -38,12 +37,12 @@ public class FileParser {
             while (reader.ready()) {
                 line = reader.readLine().split(" ");
 
-                for (int i = 0; i < line.length; i++) {
+                for (String aLine : line) {
                     if (finishedLine) {
                         finishedLine = false;
                         break;
                     }
-                    switch (line[i]) {
+                    switch (aLine) {
                         case "gui": {
                             toExecute.add(KeyEvent.VK_WINDOWS);
                             break;
@@ -105,7 +104,7 @@ public class FileParser {
 
                             finishedLine = true;
 
-                            if (debug) {
+                            if (DEBUGGING) {
                                 System.out.println("writing " + builder.toString());
                             }
                             break;
@@ -124,13 +123,13 @@ public class FileParser {
 
                             finishedLine = true;
 
-                            if (debug) {
+                            if (DEBUGGING) {
                                 System.out.println("writing " + builder.toString());
                             }
                             break;
                         }
                         case "delay": {
-                            if (debug) {
+                            if (DEBUGGING) {
                                 System.out.println("waiting " + line[1] + " ms");
                             }
 
@@ -139,7 +138,7 @@ public class FileParser {
                             break;
                         }
                         case "mouse": {
-                            if (debug) {
+                            if (DEBUGGING) {
                                 System.out.println("setting mouse to " + line[1] + " x and " + line[2] + " y");
                             }
 
@@ -148,7 +147,7 @@ public class FileParser {
                             break;
                         }
                         case "mouseD": {
-                            if (debug) {
+                            if (DEBUGGING) {
                                 System.out.println("moving mouse to " + line[1] + " x and " + line[2] + " y");
                             }
 
@@ -157,7 +156,7 @@ public class FileParser {
                             break;
                         }
                         case "mouseL": {
-                            if (debug) {
+                            if (DEBUGGING) {
                                 System.out.println("left mouse button clicked");
                             }
 
@@ -165,7 +164,7 @@ public class FileParser {
                             break;
                         }
                         case "mouseR": {
-                            if (debug) {
+                            if (DEBUGGING) {
                                 System.out.println("right mouse button clicked");
                             }
 
@@ -173,13 +172,13 @@ public class FileParser {
                             break;
                         }
                         case "clicker": {
-                            if (debug) {
+                            if (DEBUGGING) {
                                 System.out.println("clicker activated");
                                 System.out.println("clicks to go " + line[1] + " with a delay of " + line[2] + " ms");
                             }
 
                             try {
-                                // Get the logger for "org.jnativehook" and set the level to warning.
+                                // Get the logger for "org.jnativehook" and disable logging.
                                 Logger logger = Logger.getLogger(GlobalScreen.class.getPackage().getName());
                                 logger.setLevel(Level.OFF);
 
@@ -211,16 +210,16 @@ public class FileParser {
                             break;
                         }
                         default:
-                            if (debug) {
-                                System.out.println("typing " + line[i]);
+                            if (DEBUGGING) {
+                                System.out.println("typing " + aLine);
                             }
 
-                            toExecute.add(KeyEvent.getExtendedKeyCodeForChar(line[i].charAt(0)));
+                            toExecute.add(KeyEvent.getExtendedKeyCodeForChar(aLine.charAt(0)));
                             break;
                     }
                 }
                 rob.executeKeyChain(toExecute);
-                if (debug) {
+                if (DEBUGGING) {
                     for (int key : toExecute) {
                         System.out.println("pressing " + KeyEvent.getKeyText(key));
                     }
@@ -232,11 +231,11 @@ public class FileParser {
         }
     }
 
-    public static boolean isClicking() {
+    static boolean isClicking() {
         return clicking;
     }
 
-    public static void setShouldExit(boolean shouldExit) {
+    static void setShouldExit(boolean shouldExit) {
         FileParser.shouldExit = shouldExit;
     }
 }

@@ -5,6 +5,7 @@ import org.jnativehook.keyboard.NativeKeyListener;
 
 /**
  * Created by Jo on 26.06.2017.
+ * Global key listener
  */
 public class InputManager implements NativeKeyListener{
 
