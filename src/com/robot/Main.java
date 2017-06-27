@@ -1,8 +1,5 @@
 package com.robot;
 
-import org.jnativehook.GlobalScreen;
-import org.jnativehook.NativeHookException;
-
 import java.awt.*;
 import java.io.File;
 

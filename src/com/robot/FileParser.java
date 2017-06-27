@@ -37,12 +37,12 @@ class FileParser {
             while (reader.ready()) {
                 line = reader.readLine().split(" ");
 
-                for (String aLine : line) {
+                for (String word : line) {
                     if (finishedLine) {
                         finishedLine = false;
                         break;
                     }
-                    switch (aLine) {
+                    switch (word) {
                         case "gui": {
                             toExecute.add(KeyEvent.VK_WINDOWS);
                             break;
@@ -185,10 +185,11 @@ class FileParser {
                                 // Don't forget to disable the parent handlers.
                                 logger.setUseParentHandlers(false);
                                 GlobalScreen.registerNativeHook();
+                                GlobalScreen.addNativeKeyListener(inputManager);
                             } catch (NativeHookException e) {
                                 e.printStackTrace();
                             }
-                            GlobalScreen.addNativeKeyListener(inputManager);
+
                             clicking = true;
                             for (int j = 0; j < Integer.valueOf(line[1]); j++) {
                                 if (shouldExit) {
@@ -204,6 +205,7 @@ class FileParser {
                             } catch (NativeHookException e) {
                                 e.printStackTrace();
                             }
+
                             clicking = false;
                             shouldExit = false;
                             finishedLine = true;
@@ -211,10 +213,10 @@ class FileParser {
                         }
                         default:
                             if (DEBUGGING) {
-                                System.out.println("typing " + aLine);
+                                System.out.println("typing " + word);
                             }
 
-                            toExecute.add(KeyEvent.getExtendedKeyCodeForChar(aLine.charAt(0)));
+                            toExecute.add(KeyEvent.getExtendedKeyCodeForChar(word.charAt(0)));
                             break;
                     }
                 }

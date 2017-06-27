@@ -15,7 +15,7 @@ class Rob extends Robot {
     }
 
     /**
-     * Used to type the given string on keyboard.
+     * Type the given string on keyboard.
      *
      * @param s String to type
      */
