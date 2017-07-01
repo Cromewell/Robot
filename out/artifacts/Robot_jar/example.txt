@@ -6,8 +6,14 @@ enter
 delay 200
 string Y0u G07 h4ck3d!
 alt 
-right right down down enter tab tab
-delay 80
+right 
+right 
+down 
+down 
+enter 
+tab 
+tab
+delay 100
 string 100
 delay 50
 enter

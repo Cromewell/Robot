@@ -10,6 +10,10 @@ import java.io.File;
 public class Main {
     public static void main(String[] args) {
 
+        if(args.length != 1){
+            throw new IllegalArgumentException("No script as argument");
+        }
+
         Rob rob = null;
         File commandFile = new File(args[0]);
 
@@ -17,11 +21,6 @@ public class Main {
             rob = new Rob();
         } catch (AWTException e) {
             e.printStackTrace();
-        }
-
-
-        if (rob == null) {
-            System.exit(1);
         }
 
 

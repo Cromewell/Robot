@@ -11,7 +11,6 @@ public class InputManager implements NativeKeyListener {
 
     @Override
     public void nativeKeyTyped(NativeKeyEvent nativeKeyEvent) {
-
     }
 
     @Override
@@ -24,6 +23,5 @@ public class InputManager implements NativeKeyListener {
 
     @Override
     public void nativeKeyReleased(NativeKeyEvent nativeKeyEvent) {
-
     }
 }

@@ -26,150 +26,79 @@ class Rob extends Robot {
 
             switch (s.charAt(i)) {
                 case '!': {
-                    keyPress(KeyEvent.VK_SHIFT);
-                    typeKey(KeyEvent.VK_1);
-                    keyRelease(KeyEvent.VK_SHIFT);
+                    typeExclamationMark();
                     break;
                 }
                 case '?': {
-                    keyPress(KeyEvent.VK_ALT);
-                    typeKey(KeyEvent.VK_NUMPAD0);
-                    typeKey(KeyEvent.VK_NUMPAD0);
-                    typeKey(KeyEvent.VK_NUMPAD6);
-                    typeKey(KeyEvent.VK_NUMPAD3);
-                    keyRelease(KeyEvent.VK_ALT);
+                    typeQuestionMark();
                     break;
                 }
                 case ';': {
-                    keyPress(KeyEvent.VK_SHIFT);
-                    typeKey(KeyEvent.VK_COMMA);
-                    keyRelease(KeyEvent.VK_SHIFT);
+                    typeSemicolon();
                     break;
                 }
                 case ':': {
-                    keyPress(KeyEvent.VK_SHIFT);
-                    typeKey(KeyEvent.VK_PERIOD);
-                    keyRelease(KeyEvent.VK_SHIFT);
+                    typeColon();
                     break;
                 }
                 case '/': {
-                    keyPress(KeyEvent.VK_SHIFT);
-                    typeKey(KeyEvent.VK_7);
-                    keyRelease(KeyEvent.VK_SHIFT);
+                    typeSlash();
                     break;
                 }
                 case '\\': {
-                    keyPress(KeyEvent.VK_ALT);
-                    typeKey(KeyEvent.VK_NUMPAD9);
-                    typeKey(KeyEvent.VK_NUMPAD2);
-                    keyRelease(KeyEvent.VK_ALT);
+                    typeBackslash();
                     break;
                 }
                 case '(': {
-                    keyPress(KeyEvent.VK_SHIFT);
-                    typeKey(KeyEvent.VK_8);
-                    keyRelease(KeyEvent.VK_SHIFT);
+                    typeOpenedBracket();
                     break;
                 }
                 case ')': {
-                    keyPress(KeyEvent.VK_SHIFT);
-                    typeKey(KeyEvent.VK_9);
-                    keyRelease(KeyEvent.VK_SHIFT);
+                    typeClosedBracket();
                     break;
                 }
                 case '{': {
-                    keyPress(KeyEvent.VK_CONTROL);
-                    keyPress(KeyEvent.VK_ALT);
-                    typeKey(KeyEvent.VK_7);
-                    keyRelease(KeyEvent.VK_CONTROL);
-                    keyRelease(KeyEvent.VK_ALT);
+                    typeOpenedCurlyBracket();
                     break;
                 }
                 case '}': {
-                    keyPress(KeyEvent.VK_CONTROL);
-                    keyPress(KeyEvent.VK_ALT);
-                    typeKey(KeyEvent.VK_0);
-                    keyRelease(KeyEvent.VK_CONTROL);
-                    keyRelease(KeyEvent.VK_ALT);
+                    typeClosedCurlyBracket();
                     break;
                 }
                 case '[': {
-                    keyPress(KeyEvent.VK_CONTROL);
-                    keyPress(KeyEvent.VK_ALT);
-                    typeKey(KeyEvent.VK_8);
-                    keyRelease(KeyEvent.VK_CONTROL);
-                    keyRelease(KeyEvent.VK_ALT);
+                    typeOpenedSquareBracket();
                     break;
                 }
                 case ']': {
-                    keyPress(KeyEvent.VK_CONTROL);
-                    keyPress(KeyEvent.VK_ALT);
-                    typeKey(KeyEvent.VK_9);
-                    keyRelease(KeyEvent.VK_CONTROL);
-                    keyRelease(KeyEvent.VK_ALT);
+                    typeClosedSquareBracket();
                     break;
                 }
                 case 'Ä': {
-                    keyPress(KeyEvent.VK_ALT);
-                    typeKey(KeyEvent.VK_NUMPAD0);
-                    typeKey(KeyEvent.VK_NUMPAD1);
-                    typeKey(KeyEvent.VK_NUMPAD9);
-                    typeKey(KeyEvent.VK_NUMPAD6);
-                    keyRelease(KeyEvent.VK_ALT);
+                    typeUppercaseÄ();
                     break;
                 }
                 case 'ä': {
-                    keyPress(KeyEvent.VK_ALT);
-                    typeKey(KeyEvent.VK_NUMPAD0);
-                    typeKey(KeyEvent.VK_NUMPAD2);
-                    typeKey(KeyEvent.VK_NUMPAD2);
-                    typeKey(KeyEvent.VK_NUMPAD8);
-                    keyRelease(KeyEvent.VK_ALT);
+                    typeLowercaseÄ();
                     break;
                 }
                 case 'Ö': {
-                    keyPress(KeyEvent.VK_ALT);
-                    typeKey(KeyEvent.VK_NUMPAD0);
-                    typeKey(KeyEvent.VK_NUMPAD2);
-                    typeKey(KeyEvent.VK_NUMPAD1);
-                    typeKey(KeyEvent.VK_NUMPAD4);
-                    keyRelease(KeyEvent.VK_ALT);
+                    typeUppercaseÖ();
                     break;
                 }
                 case 'ö': {
-                    keyPress(KeyEvent.VK_ALT);
-                    typeKey(KeyEvent.VK_NUMPAD0);
-                    typeKey(KeyEvent.VK_NUMPAD2);
-                    typeKey(KeyEvent.VK_NUMPAD4);
-                    typeKey(KeyEvent.VK_NUMPAD6);
-                    keyRelease(KeyEvent.VK_ALT);
+                    typeLowercaseÖ();
                     break;
                 }
                 case 'Ü': {
-                    keyPress(KeyEvent.VK_ALT);
-                    typeKey(KeyEvent.VK_NUMPAD0);
-                    typeKey(KeyEvent.VK_NUMPAD2);
-                    typeKey(KeyEvent.VK_NUMPAD2);
-                    typeKey(KeyEvent.VK_NUMPAD0);
-                    keyRelease(KeyEvent.VK_ALT);
+                    typeUppercaseÜ();
                     break;
                 }
                 case 'ü': {
-                    keyPress(KeyEvent.VK_ALT);
-                    typeKey(KeyEvent.VK_NUMPAD0);
-                    typeKey(KeyEvent.VK_NUMPAD2);
-                    typeKey(KeyEvent.VK_NUMPAD5);
-                    typeKey(KeyEvent.VK_NUMPAD2);
-                    keyRelease(KeyEvent.VK_ALT);
+                    typeLowercaseÜ();
                     break;
                 }
                 case 'ß': {
-                    keyPress(KeyEvent.VK_ALT);
-                    typeKey(KeyEvent.VK_NUMPAD0);
-                    typeKey(KeyEvent.VK_NUMPAD2);
-                    typeKey(KeyEvent.VK_NUMPAD2);
-                    typeKey(KeyEvent.VK_NUMPAD3);
-                    keyRelease(KeyEvent.VK_ALT);
+                    typeß();
                     break;
                 }
                 default:
@@ -179,6 +108,153 @@ class Rob extends Robot {
                     break;
             }
         }
+    }
+
+    private void typeß() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        typeKey(KeyEvent.VK_NUMPAD3);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeUppercaseÜ() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeLowercaseÜ() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        typeKey(KeyEvent.VK_NUMPAD5);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeLowercaseÖ() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        typeKey(KeyEvent.VK_NUMPAD4);
+        typeKey(KeyEvent.VK_NUMPAD6);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeUppercaseÖ() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        typeKey(KeyEvent.VK_NUMPAD1);
+        typeKey(KeyEvent.VK_NUMPAD4);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeLowercaseÄ() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        typeKey(KeyEvent.VK_NUMPAD8);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeUppercaseÄ() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD1);
+        typeKey(KeyEvent.VK_NUMPAD9);
+        typeKey(KeyEvent.VK_NUMPAD6);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeClosedSquareBracket() {
+        keyPress(KeyEvent.VK_CONTROL);
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_9);
+        keyRelease(KeyEvent.VK_CONTROL);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeOpenedSquareBracket() {
+        keyPress(KeyEvent.VK_CONTROL);
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_8);
+        keyRelease(KeyEvent.VK_CONTROL);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeClosedCurlyBracket() {
+        keyPress(KeyEvent.VK_CONTROL);
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_0);
+        keyRelease(KeyEvent.VK_CONTROL);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeOpenedCurlyBracket() {
+        keyPress(KeyEvent.VK_CONTROL);
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_7);
+        keyRelease(KeyEvent.VK_CONTROL);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeOpenedBracket() {
+        keyPress(KeyEvent.VK_SHIFT);
+        typeKey(KeyEvent.VK_8);
+        keyRelease(KeyEvent.VK_SHIFT);
+    }
+
+    private void typeClosedBracket() {
+        keyPress(KeyEvent.VK_SHIFT);
+        typeKey(KeyEvent.VK_9);
+        keyRelease(KeyEvent.VK_SHIFT);
+    }
+
+    private void typeBackslash() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD9);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeExclamationMark() {
+        keyPress(KeyEvent.VK_SHIFT);
+        typeKey(KeyEvent.VK_1);
+        keyRelease(KeyEvent.VK_SHIFT);
+    }
+
+    private void typeQuestionMark() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD6);
+        typeKey(KeyEvent.VK_NUMPAD3);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeSemicolon() {
+        keyPress(KeyEvent.VK_SHIFT);
+        typeKey(KeyEvent.VK_COMMA);
+        keyRelease(KeyEvent.VK_SHIFT);
+    }
+
+    private void typeColon() {
+        keyPress(KeyEvent.VK_SHIFT);
+        typeKey(KeyEvent.VK_PERIOD);
+        keyRelease(KeyEvent.VK_SHIFT);
+    }
+
+    private void typeSlash() {
+        keyPress(KeyEvent.VK_SHIFT);
+        typeKey(KeyEvent.VK_7);
+        keyRelease(KeyEvent.VK_SHIFT);
     }
 
     /**
