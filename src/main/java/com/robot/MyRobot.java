@@ -73,32 +73,32 @@ public class MyRobot extends Robot {
                     typeClosedSquareBracket();
                     break;
                 }
-                case 'Ä': {
-                    typeUppercaseÄ();
+                case '\u00C4': {
+                    typeUppercaseAe();
                     break;
                 }
-                case 'ä': {
-                    typeLowercaseÄ();
+                case '\u00E4': {
+                    typeLowercaseAe();
                     break;
                 }
-                case 'Ö': {
-                    typeUppercaseÖ();
+                case '\u00D6': {
+                    typeUppercaseOe();
                     break;
                 }
-                case 'ö': {
-                    typeLowercaseÖ();
+                case '\u00F6': {
+                    typeLowercaseOe();
                     break;
                 }
-                case 'Ü': {
-                    typeUppercaseÜ();
+                case '\u00DC': {
+                    typeUppercaseUe();
                     break;
                 }
-                case 'ü': {
-                    typeLowercaseÜ();
+                case '\u00FC': {
+                    typeLowercaseUe();
                     break;
                 }
-                case 'ß': {
-                    typeß();
+                case '\u00DF': {
+                    typeSharpS();
                     break;
                 }
                 default:
@@ -110,7 +110,7 @@ public class MyRobot extends Robot {
         }
     }
 
-    private void typeß() {
+    private void typeSharpS() {
         keyPress(KeyEvent.VK_ALT);
         typeKey(KeyEvent.VK_NUMPAD0);
         typeKey(KeyEvent.VK_NUMPAD2);
@@ -119,7 +119,7 @@ public class MyRobot extends Robot {
         keyRelease(KeyEvent.VK_ALT);
     }
 
-    private void typeUppercaseÜ() {
+    private void typeUppercaseUe() {
         keyPress(KeyEvent.VK_ALT);
         typeKey(KeyEvent.VK_NUMPAD0);
         typeKey(KeyEvent.VK_NUMPAD2);
@@ -128,7 +128,7 @@ public class MyRobot extends Robot {
         keyRelease(KeyEvent.VK_ALT);
     }
 
-    private void typeLowercaseÜ() {
+    private void typeLowercaseUe() {
         keyPress(KeyEvent.VK_ALT);
         typeKey(KeyEvent.VK_NUMPAD0);
         typeKey(KeyEvent.VK_NUMPAD2);
@@ -137,7 +137,7 @@ public class MyRobot extends Robot {
         keyRelease(KeyEvent.VK_ALT);
     }
 
-    private void typeLowercaseÖ() {
+    private void typeLowercaseOe() {
         keyPress(KeyEvent.VK_ALT);
         typeKey(KeyEvent.VK_NUMPAD0);
         typeKey(KeyEvent.VK_NUMPAD2);
@@ -146,7 +146,7 @@ public class MyRobot extends Robot {
         keyRelease(KeyEvent.VK_ALT);
     }
 
-    private void typeUppercaseÖ() {
+    private void typeUppercaseOe() {
         keyPress(KeyEvent.VK_ALT);
         typeKey(KeyEvent.VK_NUMPAD0);
         typeKey(KeyEvent.VK_NUMPAD2);
@@ -155,7 +155,7 @@ public class MyRobot extends Robot {
         keyRelease(KeyEvent.VK_ALT);
     }
 
-    private void typeLowercaseÄ() {
+    private void typeLowercaseAe() {
         keyPress(KeyEvent.VK_ALT);
         typeKey(KeyEvent.VK_NUMPAD0);
         typeKey(KeyEvent.VK_NUMPAD2);
@@ -164,7 +164,7 @@ public class MyRobot extends Robot {
         keyRelease(KeyEvent.VK_ALT);
     }
 
-    private void typeUppercaseÄ() {
+    private void typeUppercaseAe() {
         keyPress(KeyEvent.VK_ALT);
         typeKey(KeyEvent.VK_NUMPAD0);
         typeKey(KeyEvent.VK_NUMPAD1);
