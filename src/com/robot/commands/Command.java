@@ -1,16 +1,21 @@
 package com.robot.commands;
 
+import com.robot.InputManager;
 import com.robot.MyRobot;
 
 import java.util.ArrayList;
 
 /**
  * Created by Jo on 02.07.2017.
+ * Defines the command constructors.
  */
 public abstract class Command {
 
     private MyRobot myRobot;
     private ArrayList<Integer> keys;
+    private int amount;
+    private int delay;
+    private InputManager inputManager;
     private boolean debug;
     private String s;
     private int time;
@@ -49,6 +54,14 @@ public abstract class Command {
         this.y = y;
     }
 
+    public Command(MyRobot myRobot, int amount, int delay, InputManager inputManager, boolean debug) {
+        this.myRobot = myRobot;
+        this.inputManager = inputManager;
+        this.debug = debug;
+        this.amount = amount;
+        this.delay = delay;
+    }
+
     public Command(MyRobot myRobot, int x, int y, int speed, boolean debug) {
         this.myRobot = myRobot;
         this.debug = debug;
@@ -64,7 +77,7 @@ public abstract class Command {
         return myRobot;
     }
 
-    public ArrayList<Integer> getKeys() {
+    ArrayList<Integer> getKeys() {
         return keys;
     }
 
@@ -72,23 +85,35 @@ public abstract class Command {
         return debug;
     }
 
-    public String getS() {
+    String getS() {
         return s;
     }
 
-    public int getTime() {
+    int getTime() {
         return time;
     }
 
-    public int getX() {
+    int getX() {
         return x;
     }
 
-    public int getY() {
+    int getY() {
         return y;
     }
 
-    public int getSpeed() {
+    int getSpeed() {
         return speed;
+    }
+
+    int getAmount() {
+        return amount;
+    }
+
+    int getDelay() {
+        return delay;
+    }
+
+    InputManager getInputManager() {
+        return inputManager;
     }
 }

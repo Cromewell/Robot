@@ -1,21 +1,16 @@
 package com.robot;
 
 import com.robot.commands.*;
-import org.jnativehook.GlobalScreen;
-import org.jnativehook.NativeHookException;
 
 import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Created by Jo on 17.06.2017.
  * Parses the given file and executes the commandos.
  */
-class FileParser {
+public class FileParser {
 
     private static final boolean DEBUGGING = true;
     private static boolean shouldExit = false;
@@ -47,7 +42,6 @@ class FileParser {
                     switch (word) {
                         case "gui": {
                             toExecute.add(KeyEvent.VK_WINDOWS);
-                            System.out.println("GUI ADDED");
                             break;
                         }
                         case "enter": {
@@ -142,42 +136,9 @@ class FileParser {
                             break;
                         }
                         case "clicker": {
-                            if (DEBUGGING) {
-                                System.out.println("clicker activated");
-                                System.out.println("clicks to go " + line[1] + " with a delay of " + line[2] + " ms");
-                            }
-
-                            try {
-                                // Get the logger for "org.jnativehook" and disable logging.
-                                Logger logger = Logger.getLogger(GlobalScreen.class.getPackage().getName());
-                                logger.setLevel(Level.OFF);
-
-                                // Don't forget to disable the parent handlers.
-                                logger.setUseParentHandlers(false);
-                                GlobalScreen.registerNativeHook();
-                                GlobalScreen.addNativeKeyListener(inputManager);
-                            } catch (NativeHookException e) {
-                                e.printStackTrace();
-                            }
-
-                            clicking = true;
-                            for (int j = 0; j < Integer.valueOf(line[1]); j++) {
-                                if (shouldExit) {
-                                    System.out.println("exit clicker loop");
-                                    break;
-                                }
-                                myRobot.typeButton(KeyEvent.BUTTON1_MASK);
-                                myRobot.delay(Integer.valueOf(line[2]));
-                            }
-
-                            try {
-                                GlobalScreen.unregisterNativeHook();
-                            } catch (NativeHookException e) {
-                                e.printStackTrace();
-                            }
-
-                            clicking = false;
-                            shouldExit = false;
+                            System.out.println(line[1]);
+                            System.out.println(line[2]);
+                            commands.add(new ClickerCommand(myRobot, Integer.parseInt(line[1]), Integer.parseInt(line[2]), inputManager, DEBUGGING));
                             finishedLine = true;
                             break;
                         }
@@ -201,7 +162,15 @@ class FileParser {
         return clicking;
     }
 
-    static void setShouldExit(boolean shouldExit) {
+    public static void setClicking(boolean clicking) {
+        FileParser.clicking = clicking;
+    }
+
+    public static void setShouldExit(boolean shouldExit) {
         FileParser.shouldExit = shouldExit;
+    }
+
+    public static boolean isShouldExit() {
+        return shouldExit;
     }
 }
