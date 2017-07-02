@@ -24,9 +24,9 @@ class FileParser {
      * Parses the script file and executes the commands in it.
      *
      * @param file Roboscript file
-     * @param rob  Executing robot
+     * @param myRobot  Executing robot
      */
-    static void parseFile(File file, Rob rob, InputManager inputManager) {
+    static void parseFile(File file, MyRobot myRobot, InputManager inputManager) {
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String[] line;
             ArrayList<Integer> toExecute = new ArrayList<>();
@@ -100,7 +100,7 @@ class FileParser {
                                 }
                             }
 
-                            rob.typeString(builder.toString());
+                            myRobot.typeString(builder.toString());
 
                             finishedLine = true;
 
@@ -118,8 +118,8 @@ class FileParser {
                                 }
                             }
 
-                            rob.typeString(builder.toString());
-                            rob.typeKey(KeyEvent.VK_ENTER);
+                            myRobot.typeString(builder.toString());
+                            myRobot.typeKey(KeyEvent.VK_ENTER);
 
                             finishedLine = true;
 
@@ -133,7 +133,7 @@ class FileParser {
                                 System.out.println("waiting " + line[1] + " ms");
                             }
 
-                            rob.delay(Integer.valueOf(line[1]));
+                            myRobot.delay(Integer.valueOf(line[1]));
                             finishedLine = true;
                             break;
                         }
@@ -142,7 +142,7 @@ class FileParser {
                                 System.out.println("setting mouse to " + line[1] + " x and " + line[2] + " y");
                             }
 
-                            rob.mouseMove(Integer.valueOf(line[1]), Integer.valueOf(line[2]));
+                            myRobot.mouseMove(Integer.valueOf(line[1]), Integer.valueOf(line[2]));
                             finishedLine = true;
                             break;
                         }
@@ -151,7 +151,7 @@ class FileParser {
                                 System.out.println("moving mouse to " + line[1] + " x and " + line[2] + " y");
                             }
 
-                            rob.moveMouseTo(Integer.valueOf(line[1]), Integer.valueOf(line[2]), Integer.valueOf(line[2]));
+                            myRobot.moveMouseTo(Integer.valueOf(line[1]), Integer.valueOf(line[2]), Integer.valueOf(line[2]));
                             finishedLine = true;
                             break;
                         }
@@ -160,7 +160,7 @@ class FileParser {
                                 System.out.println("left mouse button clicked");
                             }
 
-                            rob.typeButton(MouseEvent.BUTTON1);
+                            myRobot.typeButton(MouseEvent.BUTTON1);
                             break;
                         }
                         case "mouseR": {
@@ -168,7 +168,7 @@ class FileParser {
                                 System.out.println("right mouse button clicked");
                             }
 
-                            rob.typeButton(MouseEvent.BUTTON2);
+                            myRobot.typeButton(MouseEvent.BUTTON2);
                             break;
                         }
                         case "clicker": {
@@ -196,8 +196,8 @@ class FileParser {
                                     System.out.println("exit clicker loop");
                                     break;
                                 }
-                                rob.typeButton(KeyEvent.BUTTON1_MASK);
-                                rob.delay(Integer.valueOf(line[2]));
+                                myRobot.typeButton(KeyEvent.BUTTON1_MASK);
+                                myRobot.delay(Integer.valueOf(line[2]));
                             }
 
                             try {
@@ -215,22 +215,26 @@ class FileParser {
                             if (DEBUGGING) {
                                 System.out.println("typing " + word);
                             }
-
                             toExecute.add(KeyEvent.getExtendedKeyCodeForChar(word.charAt(0)));
                             break;
                     }
                 }
-                rob.executeKeyChain(toExecute);
-                if (DEBUGGING) {
-                    for (int key : toExecute) {
-                        System.out.println("pressing " + KeyEvent.getKeyText(key));
-                    }
-                }
-                toExecute.clear();
+
+               executeCommands(myRobot, toExecute);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static void executeCommands(MyRobot myRobot, ArrayList<Integer> toExecute) {
+        myRobot.executeKeyChain(toExecute);
+        if (DEBUGGING) {
+            for (int key : toExecute) {
+                System.out.println("pressing " + KeyEvent.getKeyText(key));
+            }
+        }
+        toExecute.clear();
     }
 
     static boolean isClicking() {

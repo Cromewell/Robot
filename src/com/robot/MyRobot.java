@@ -9,9 +9,9 @@ import java.util.ArrayList;
  * <p>
  * Holds extra methods for keyboard usage.
  */
-class Rob extends Robot {
+class MyRobot extends Robot {
 
-    Rob() throws AWTException {
+    MyRobot() throws AWTException {
     }
 
     /**
@@ -109,7 +109,7 @@ class Rob extends Robot {
             }
         }
     }
-
+    
     private void typeß() {
         keyPress(KeyEvent.VK_ALT);
         typeKey(KeyEvent.VK_NUMPAD0);

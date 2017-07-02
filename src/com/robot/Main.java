@@ -11,20 +11,20 @@ public class Main {
     public static void main(String[] args) {
 
         if(args.length != 1){
-            throw new IllegalArgumentException("No script as argument");
+            throw new IllegalArgumentException("Needs one script as argument.");
         }
 
-        Rob rob = null;
+        MyRobot myRobot = null;
         File commandFile = new File(args[0]);
 
         try {
-            rob = new Rob();
+            myRobot = new MyRobot();
         } catch (AWTException e) {
             e.printStackTrace();
         }
 
 
         //parse and execute script file//
-        FileParser.parseFile(commandFile, rob, new InputManager());
+        FileParser.parseFile(commandFile, myRobot, new InputManager());
     }
 }
