@@ -32,7 +32,12 @@ public class FileParser {
 
 
             while (reader.ready()) {
-                line = reader.readLine().split(" ");
+                String input = reader.readLine().trim();
+                //Allow Empty Lines via input.isEmpty()
+                if (input.isEmpty()) {
+                    continue;
+                }
+                line = input.split(" ");
 
                 for (String word : line) {
                     if (finishedLine) {
@@ -142,6 +147,20 @@ public class FileParser {
                             finishedLine = true;
                             break;
                         }
+                        case "loop": {
+                            if (line.length == 2) {
+                                commands.add(new LoopCommand(myRobot, DEBUGGING, Integer.valueOf(line[1])));
+                            } else {
+                                commands.add(new LoopCommand(myRobot, DEBUGGING, -1));
+                            }
+                            finishedLine = true;
+                            break;
+                        }
+                        case "end": {
+                            commands.add(new EndLoopCommand(myRobot, DEBUGGING));
+                            //Finished Line not needed, since there are no Arguments left to process
+                            break;
+                        }
                         default:
                             toExecute.add(KeyEvent.getExtendedKeyCodeForChar(word.charAt(0)));
                             break;
@@ -166,11 +185,11 @@ public class FileParser {
         FileParser.clicking = clicking;
     }
 
-    public static void setShouldExit(boolean shouldExit) {
-        FileParser.shouldExit = shouldExit;
-    }
-
     public static boolean isShouldExit() {
         return shouldExit;
+    }
+
+    public static void setShouldExit(boolean shouldExit) {
+        FileParser.shouldExit = shouldExit;
     }
 }
