@@ -1,5 +1,6 @@
 package com.robot;
 
+import com.robot.commands.*;
 import org.jnativehook.GlobalScreen;
 import org.jnativehook.NativeHookException;
 
@@ -23,10 +24,11 @@ class FileParser {
     /**
      * Parses the script file and executes the commands in it.
      *
-     * @param file Roboscript file
-     * @param myRobot  Executing robot
+     * @param file    Roboscript file
+     * @param myRobot Executing robot
      */
-    static void parseFile(File file, MyRobot myRobot, InputManager inputManager) {
+    static ArrayList<Command> parseFile(File file, MyRobot myRobot, InputManager inputManager) {
+        ArrayList<Command> commands = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String[] line;
             ArrayList<Integer> toExecute = new ArrayList<>();
@@ -45,6 +47,7 @@ class FileParser {
                     switch (word) {
                         case "gui": {
                             toExecute.add(KeyEvent.VK_WINDOWS);
+                            System.out.println("GUI ADDED");
                             break;
                         }
                         case "enter": {
@@ -99,14 +102,8 @@ class FileParser {
                                     builder.append(" ");
                                 }
                             }
-
-                            myRobot.typeString(builder.toString());
-
+                            commands.add(new StringCommand(myRobot, builder.toString(), DEBUGGING));
                             finishedLine = true;
-
-                            if (DEBUGGING) {
-                                System.out.println("writing " + builder.toString());
-                            }
                             break;
                         }
                         case "stringN": {
@@ -117,58 +114,31 @@ class FileParser {
                                     builder.append(" ");
                                 }
                             }
-
-                            myRobot.typeString(builder.toString());
-                            myRobot.typeKey(KeyEvent.VK_ENTER);
-
+                            commands.add(new StringNCommand(myRobot, builder.toString(), DEBUGGING));
                             finishedLine = true;
-
-                            if (DEBUGGING) {
-                                System.out.println("writing " + builder.toString());
-                            }
                             break;
                         }
                         case "delay": {
-                            if (DEBUGGING) {
-                                System.out.println("waiting " + line[1] + " ms");
-                            }
-
-                            myRobot.delay(Integer.valueOf(line[1]));
+                            commands.add(new DelayCommand(myRobot, Integer.parseInt(line[1]), DEBUGGING));
                             finishedLine = true;
                             break;
                         }
                         case "mouse": {
-                            if (DEBUGGING) {
-                                System.out.println("setting mouse to " + line[1] + " x and " + line[2] + " y");
-                            }
-
-                            myRobot.mouseMove(Integer.valueOf(line[1]), Integer.valueOf(line[2]));
+                            commands.add(new MouseCommand(myRobot, Integer.valueOf(line[1]), Integer.valueOf(line[2]), DEBUGGING));
                             finishedLine = true;
                             break;
                         }
                         case "mouseD": {
-                            if (DEBUGGING) {
-                                System.out.println("moving mouse to " + line[1] + " x and " + line[2] + " y");
-                            }
-
-                            myRobot.moveMouseTo(Integer.valueOf(line[1]), Integer.valueOf(line[2]), Integer.valueOf(line[2]));
+                            commands.add(new MouseDCommand(myRobot, Integer.valueOf(line[1]), Integer.valueOf(line[2]), Integer.valueOf(line[3]), DEBUGGING));
                             finishedLine = true;
                             break;
                         }
                         case "mouseL": {
-                            if (DEBUGGING) {
-                                System.out.println("left mouse button clicked");
-                            }
-
-                            myRobot.typeButton(MouseEvent.BUTTON1);
+                            commands.add(new MouseLCommand(myRobot, DEBUGGING));
                             break;
                         }
                         case "mouseR": {
-                            if (DEBUGGING) {
-                                System.out.println("right mouse button clicked");
-                            }
-
-                            myRobot.typeButton(MouseEvent.BUTTON2);
+                            commands.add(new MouseRCommand(myRobot, DEBUGGING));
                             break;
                         }
                         case "clicker": {
@@ -212,29 +182,19 @@ class FileParser {
                             break;
                         }
                         default:
-                            if (DEBUGGING) {
-                                System.out.println("typing " + word);
-                            }
                             toExecute.add(KeyEvent.getExtendedKeyCodeForChar(word.charAt(0)));
                             break;
                     }
                 }
-
-               executeCommands(myRobot, toExecute);
+                if (toExecute.size() > 0) {
+                    commands.add(new KeyChainCommand(myRobot, new ArrayList<>(toExecute), DEBUGGING));
+                }
+                toExecute.clear();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    private static void executeCommands(MyRobot myRobot, ArrayList<Integer> toExecute) {
-        myRobot.executeKeyChain(toExecute);
-        if (DEBUGGING) {
-            for (int key : toExecute) {
-                System.out.println("pressing " + KeyEvent.getKeyText(key));
-            }
-        }
-        toExecute.clear();
+        return commands;
     }
 
     static boolean isClicking() {

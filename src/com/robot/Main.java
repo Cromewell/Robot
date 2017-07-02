@@ -1,7 +1,10 @@
 package com.robot;
 
+import com.robot.commands.Command;
+
 import java.awt.*;
 import java.io.File;
+import java.util.ArrayList;
 
 /**
  * Created by Jo on 17.06.2017.
@@ -10,7 +13,7 @@ import java.io.File;
 public class Main {
     public static void main(String[] args) {
 
-        if(args.length != 1){
+        if (args.length != 1) {
             throw new IllegalArgumentException("Needs one script as argument.");
         }
 
@@ -25,6 +28,10 @@ public class Main {
 
 
         //parse and execute script file//
-        FileParser.parseFile(commandFile, myRobot, new InputManager());
+        ArrayList<Command> commands = FileParser.parseFile(commandFile, myRobot, new InputManager());
+
+        for (Command cmd : commands) {
+            cmd.execute();
+        }
     }
 }

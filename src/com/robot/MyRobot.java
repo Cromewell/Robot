@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * <p>
  * Holds extra methods for keyboard usage.
  */
-class MyRobot extends Robot {
+public class MyRobot extends Robot {
 
     MyRobot() throws AWTException {
     }
@@ -19,7 +19,7 @@ class MyRobot extends Robot {
      *
      * @param s String to type
      */
-    void typeString(String s) {
+    public void typeString(String s) {
         for (int i = 0; i < s.length(); i++) {
 
             int c;
@@ -109,7 +109,7 @@ class MyRobot extends Robot {
             }
         }
     }
-    
+
     private void typeß() {
         keyPress(KeyEvent.VK_ALT);
         typeKey(KeyEvent.VK_NUMPAD0);
@@ -262,7 +262,7 @@ class MyRobot extends Robot {
      *
      * @param keyCode Key to type
      */
-    void typeKey(int keyCode) {
+    public void typeKey(int keyCode) {
         keyPress(keyCode);
         keyRelease(keyCode);
     }
@@ -272,7 +272,7 @@ class MyRobot extends Robot {
      *
      * @param buttonCode Button to type
      */
-    void typeButton(int buttonCode) {
+    public void typeButton(int buttonCode) {
         mousePress(buttonCode);
         mouseRelease(buttonCode);
     }
@@ -297,7 +297,7 @@ class MyRobot extends Robot {
      *
      * @param keys Keys to execute
      */
-    void executeKeyChain(ArrayList<Integer> keys) {
+    public void executeKeyChain(ArrayList<Integer> keys) {
         for (int key : keys) {
             keyPress(key);
             delay(80);
@@ -307,7 +307,7 @@ class MyRobot extends Robot {
         }
     }
 
-    void moveMouseTo(int x, int y, int speed) {
+    public void moveMouseTo(int x, int y, int speed) {
         Point location = MouseInfo.getPointerInfo().getLocation();
 
         int n = speed / 5;
