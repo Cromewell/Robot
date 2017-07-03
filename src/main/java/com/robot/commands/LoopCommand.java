@@ -8,19 +8,24 @@ import com.robot.MyRobot;
  */
 public class LoopCommand extends Command {
 
-    int loops = -1;
-    int cLoops = -1;
-    int command = 0;
-    boolean throughEnd = false;
+    private int loops = -1;
+    private int cLoops = -1;
+    private int command = 0;
+    private boolean throughEnd = false;
 
-    public LoopCommand(MyRobot robot, boolean debug, int loops) {
+    public LoopCommand(final MyRobot robot, boolean debug, int loops) {
         super(robot, debug);
         this.cLoops = loops;
+        if(cLoops == -1){
+            if(isDebug()){
+                System.out.println("Warning: Program contains Infinite Loop! Program will not terminate by itself!");
+            }
+        }
     }
 
     @Override
     public void execute() {
-        if (throughEnd == false) {
+        if (!throughEnd) {
             loops = cLoops;
         } else {
             throughEnd = false;
@@ -32,23 +37,23 @@ public class LoopCommand extends Command {
             if (loops != -1) {
                 loops--;
             }
-            Main.loopDeepness++;
-            Main.loopEntries.put(Main.loopDeepness, this);
-            command = Main.currentCommand;
+            Main.goIntoLoop();
+            Main.setLoopEntry(Main.getLoopDeepness(), this);
+            command = Main.getCurrentCommandPointer();
             if (isDebug()) {
-                System.out.println("Current Deepness: " + Main.loopDeepness + " + currentCommand: " + Main.currentCommand);
+                System.out.println("Current Deepness: " + Main.getLoopDeepness() + " + currentCommand: " + Main.getCurrentCommandPointer());
             }
         } else {
 
-            int cP = Main.currentCommand;
+            int cP = Main.getCurrentCommandPointer();
             try {
                 int l = 0;
-                while (!(Main.commands.get(cP) instanceof EndLoopCommand) || l > 0) {
-                    if (Main.commands.get(cP) instanceof EndLoopCommand) {
+                while (!(Main.getCommands().get(cP) instanceof EndLoopCommand) || l > 0) {
+                    if (Main.getCommands().get(cP) instanceof EndLoopCommand) {
                         l--;
                     }
                     cP++;
-                    if (Main.commands.get(cP) instanceof LoopCommand) {
+                    if (Main.getCommands().get(cP) instanceof LoopCommand) {
                         l++;
                     }
                 }
@@ -56,13 +61,28 @@ public class LoopCommand extends Command {
                 if (isDebug()) {
                     System.out.println("No last End Command found! Exiting Program!");
                 }
-                Main.currentCommand = Integer.MAX_VALUE - 1;
+                Main.setNextCommandPointer(Integer.MAX_VALUE);
                 return;
             }
-            Main.currentCommand = cP;
+            Main.setNextCommandPointer(cP+1);
             if (isDebug()) {
-                System.out.println("Exiting Loop " + (Main.loopDeepness) + " at " + Main.currentCommand);
+                System.out.println("Exiting Loop " + (Main.getLoopDeepness()) + " at " + Main.getCurrentCommandPointer());
             }
         }
+    }
+
+    /**
+     * Signals the LoopCommand that next Time it executes, it was through a EndLoopCommand
+     */
+    public void throughEndCommand(){
+        throughEnd = true;
+    }
+
+    /**
+     * Returns the Command Pointer of this LoopCommand
+     * @return
+     */
+    public int getLoopCommandPointer(){
+        return command;
     }
 }
