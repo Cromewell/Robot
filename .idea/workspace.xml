@@ -6,17 +6,21 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="897ca9b4-fb70-49d3-b53c-8c741f92de39" name="Default" comment="Cleanup">
+    <list default="true" id="897ca9b4-fb70-49d3-b53c-8c741f92de39" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Robot_jar/Robot.jar" afterPath="$PROJECT_DIR$/out/artifacts/Robot_jar/Robot.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robot/FileParser.class" afterPath="$PROJECT_DIR$/target/classes/com/robot/FileParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robot/Main.class" afterPath="$PROJECT_DIR$/target/classes/com/robot/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robot/commands/ClickerCommand.class" afterPath="$PROJECT_DIR$/target/classes/com/robot/commands/ClickerCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robot/commands/Command.class" afterPath="$PROJECT_DIR$/target/classes/com/robot/commands/Command.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robot/commands/DelayCommand.class" afterPath="$PROJECT_DIR$/target/classes/com/robot/commands/DelayCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robot/commands/EndLoopCommand.class" afterPath="$PROJECT_DIR$/target/classes/com/robot/commands/EndLoopCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robot/commands/KeyChainCommand.class" afterPath="$PROJECT_DIR$/target/classes/com/robot/commands/KeyChainCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robot/commands/LoopCommand.class" afterPath="$PROJECT_DIR$/target/classes/com/robot/commands/LoopCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robot/commands/MouseCommand.class" afterPath="$PROJECT_DIR$/target/classes/com/robot/commands/MouseCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robot/commands/MouseDCommand.class" afterPath="$PROJECT_DIR$/target/classes/com/robot/commands/MouseDCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robot/commands/StringCommand.class" afterPath="$PROJECT_DIR$/target/classes/com/robot/commands/StringCommand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robot/commands/StringNCommand.class" afterPath="$PROJECT_DIR$/target/classes/com/robot/commands/StringNCommand.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robot/FileParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/robot/FileParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robot/commands/ClickerCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/robot/commands/ClickerCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robot/commands/Command.java" afterPath="$PROJECT_DIR$/src/main/java/com/robot/commands/Command.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robot/commands/DelayCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/robot/commands/DelayCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robot/commands/KeyChainCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/robot/commands/KeyChainCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robot/commands/MouseCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/robot/commands/MouseCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robot/commands/MouseDCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/robot/commands/MouseDCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robot/commands/StringCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/robot/commands/StringCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robot/commands/StringNCommand.java" afterPath="$PROJECT_DIR$/src/main/java/com/robot/commands/StringNCommand.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -365,6 +369,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="Push.Settings">
+    <excluded-roots>
+      <path value="$PROJECT_DIR$/Robot" />
+    </excluded-roots>
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -808,7 +817,14 @@
       <option name="project" value="LOCAL" />
       <updated>1499024799540</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Cleanup">
+      <created>1499108170018</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1499108170018</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -816,7 +832,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -825,7 +840,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09347826" sideWeight="0.50208336" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09347826" sideWeight="0.50208336" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09347826" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.48958334" order="7" side_tool="false" content_ui="tabs" />
