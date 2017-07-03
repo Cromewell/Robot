@@ -7,7 +7,7 @@ import java.awt.event.KeyEvent;
 /**
  * Created by Jo on 02.07.2017.
  */
-public class StringNCommand  extends Command {
+public class StringNCommand extends Command {
 
     public StringNCommand(MyRobot myRobot, String s, boolean debug) {
         super(myRobot, s, debug);
