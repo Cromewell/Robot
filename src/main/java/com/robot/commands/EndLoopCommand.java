@@ -8,23 +8,23 @@ import com.robot.MyRobot;
  */
 public class EndLoopCommand extends Command {
 
-    public EndLoopCommand(MyRobot robot, boolean debug) {
+    public EndLoopCommand(final MyRobot robot, boolean debug) {
         super(robot, debug);
     }
 
     @Override
     public void execute() {
-        if (Main.loopDeepness <= 0) {
+        if (Main.getLoopDeepness() <= 0) {
             if (isDebug()) {
                 System.out.println("End Command found outside of Loop! Ignoring!");
             }
         } else {
-            Main.currentCommand = Main.loopEntries.get(Main.loopDeepness).command - 1;
-            Main.loopEntries.get(Main.loopDeepness).throughEnd = true;
+            Main.setNextCommandPointer(Main.getLoopEntry(Main.getLoopDeepness()).getLoopCommandPointer());
+            Main.getLoopEntry(Main.getLoopDeepness()).throughEndCommand();
             if (isDebug()) {
-                System.out.println("End of Loop: Going back to Command " + (Main.currentCommand + 1));
+                System.out.println("End of Loop: Going back to Command " + (Main.getCurrentCommandPointer() + 1));
             }
-            Main.loopDeepness--;
+            Main.exitLoop();
         }
     }
 }

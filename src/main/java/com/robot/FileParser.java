@@ -37,7 +37,10 @@ public class FileParser {
                 if (input.isEmpty()) {
                     continue;
                 }
-                line = input.split(" ");
+                // \\s catches every Whitespace, like Space or Tabs and removes them.
+                line = input.split("\\s");
+
+                finishedLine = false;
 
                 for (String word : line) {
                     if (finishedLine) {
@@ -148,15 +151,15 @@ public class FileParser {
                         case "loop": {
                             if (line.length == 2) {
                                 commands.add(new LoopCommand(myRobot, DEBUGGING, Integer.valueOf(line[1])));
+                                finishedLine = true;
                             } else {
                                 commands.add(new LoopCommand(myRobot, DEBUGGING, -1));
                             }
-                            finishedLine = true;
                             break;
                         }
                         case "end": {
                             commands.add(new EndLoopCommand(myRobot, DEBUGGING));
-                            //Finished Line not needed, since there are no Arguments left to process
+                            finishedLine = true;
                             break;
                         }
                         default:
