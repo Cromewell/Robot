@@ -6,13 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="897ca9b4-fb70-49d3-b53c-8c741f92de39" name="Default" comment="Cleanup">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Robot_jar/Robot.jar" afterPath="$PROJECT_DIR$/out/artifacts/Robot_jar/Robot.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robot/FileParser.class" afterPath="$PROJECT_DIR$/target/classes/com/robot/FileParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Robot_jar/loopTest.txt" afterPath="$PROJECT_DIR$/out/artifacts/Robot_jar/loopTest.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robot/FileParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/robot/FileParser.java" />
-    </list>
+    <list default="true" id="897ca9b4-fb70-49d3-b53c-8c741f92de39" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -360,11 +354,6 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
-  <component name="Push.Settings">
-    <excluded-roots>
-      <path value="$PROJECT_DIR$/Robot" />
-    </excluded-roots>
-  </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Max\IdeaProjects\Robot\src\main\resources\META-INF" />
@@ -701,7 +690,14 @@
       <option name="project" value="LOCAL" />
       <updated>1499108170018</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Fix">
+      <created>1499109727396</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1499109727396</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -787,7 +783,8 @@
     <MESSAGE value="cleanup + renamed class" />
     <MESSAGE value="cleaned parse method up" />
     <MESSAGE value="Cleanup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleanup" />
+    <MESSAGE value="Fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
