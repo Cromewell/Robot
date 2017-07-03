@@ -23,8 +23,11 @@ public class FileParser {
      * @param myRobot Executing robot
      */
     static ArrayList<Command> parseFile(File file, MyRobot myRobot, InputManager inputManager) {
+
         ArrayList<Command> commands = new ArrayList<>();
+
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+
             String[] line;
             ArrayList<Integer> toExecute = new ArrayList<>();
             boolean finishedLine = false;
@@ -157,7 +160,6 @@ public class FileParser {
                         }
                         case "end": {
                             commands.add(new EndLoopCommand(myRobot, DEBUGGING));
-                            finishedLine = true;
                             break;
                         }
                         default:

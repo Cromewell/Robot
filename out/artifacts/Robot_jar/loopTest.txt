@@ -10,6 +10,7 @@ delay 200
 stringN yay
 delay 200
 end
+string jo
 alt 
 right 
 right 
