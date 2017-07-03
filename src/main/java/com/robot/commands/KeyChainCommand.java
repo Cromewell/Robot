@@ -11,16 +11,19 @@ import java.util.ArrayList;
  */
 public class KeyChainCommand extends Command {
 
+    private ArrayList<Integer> keys;
+
     public KeyChainCommand(MyRobot myRobot, ArrayList<Integer> keys, boolean debug) {
-        super(myRobot, keys, debug);
+        super(myRobot, debug);
+        this.keys = keys;
     }
 
     @Override
     public void execute() {
-        getMyRobot().executeKeyChain(getKeys());
+        getMyRobot().executeKeyChain(keys);
         if (isDebug()) {
             //System.out.println(Arrays.toString(new ArrayList[]{getKeys()}));
-            for (int key : getKeys()) {
+            for (int key : keys) {
                 System.out.println("pressing " + KeyEvent.getKeyText(key));
             }
         }

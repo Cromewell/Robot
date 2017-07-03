@@ -7,16 +7,23 @@ import com.robot.MyRobot;
  */
 public class MouseDCommand extends Command {
 
+    private int x;
+    private int y;
+    private int speed;
+
     public MouseDCommand(MyRobot myRobot, int x, int y, int speed, boolean debug) {
-        super(myRobot, x, y, speed, debug);
+        super(myRobot, debug);
+        this.x = x;
+        this.y = y;
+        this.speed = speed;
     }
 
     @Override
     public void execute() {
         if (isDebug()) {
-            System.out.println("moving mouse to " + getX() + " x and " + getY() + " y");
+            System.out.println("moving mouse to " + x + " x and " + y + " y");
         }
 
-        getMyRobot().moveMouseTo(getX(), getY(), getSpeed());
+        getMyRobot().moveMouseTo(x, y, speed);
     }
 }

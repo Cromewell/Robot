@@ -7,16 +7,19 @@ import com.robot.MyRobot;
  */
 public class DelayCommand extends Command {
 
+    private int time;
+
     public DelayCommand(MyRobot myRobot, int time, boolean debug) {
-        super(myRobot, time, debug);
+        super(myRobot, debug);
+        this.time = time;
     }
 
     @Override
     public void execute() {
-        getMyRobot().delay(getTime());
+        getMyRobot().delay(time);
 
         if (isDebug()) {
-            System.out.println("waiting " + getTime() + " ms");
+            System.out.println("waiting " + time + " ms");
         }
     }
 }

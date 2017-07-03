@@ -40,8 +40,6 @@ public class FileParser {
                 // \\s catches every Whitespace, like Space or Tabs and removes them.
                 line = input.split("\\s");
 
-                finishedLine = false;
-
                 for (String word : line) {
                     if (finishedLine) {
                         finishedLine = false;

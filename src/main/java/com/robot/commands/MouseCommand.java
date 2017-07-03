@@ -7,16 +7,21 @@ import com.robot.MyRobot;
  */
 public class MouseCommand extends Command {
 
+    private int x;
+    private int y;
+
     public MouseCommand(MyRobot myRobot, int x, int y, boolean debug) {
-        super(myRobot, x, y, debug);
+        super(myRobot, debug);
+        this.x = x;
+        this.y = y;
     }
 
     @Override
     public void execute() {
         if (isDebug()) {
-            System.out.println("setting mouse to " + getX() + " x and " + getY() + " y");
+            System.out.println("setting mouse to " + x + " x and " + y + " y");
         }
 
-        getMyRobot().mouseMove(getX(), getY());
+        getMyRobot().mouseMove(x, y);
     }
 }

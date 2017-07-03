@@ -15,16 +15,22 @@ import java.util.logging.Logger;
  */
 public class ClickerCommand extends Command {
 
+    private InputManager inputManager;
+    private int amount;
+    private int delay;
 
     public ClickerCommand(MyRobot myRobot, int amount, int delay, InputManager inputManager, boolean debug) {
-        super(myRobot, amount, delay, inputManager, debug);
+        super(myRobot, debug);
+        this.inputManager = inputManager;
+        this.amount = amount;
+        this.delay = delay;
     }
 
     @Override
     public void execute() {
         if (isDebug()) {
             System.out.println("clicker activated");
-            System.out.println("clicks to go " + getAmount() + " with a delay of " + getDelay() + " ms");
+            System.out.println("clicks to go " + amount + " with a delay of " + delay + " ms");
         }
 
         try {
@@ -35,19 +41,23 @@ public class ClickerCommand extends Command {
             // Don't forget to disable the parent handlers.
             logger.setUseParentHandlers(false);
             GlobalScreen.registerNativeHook();
-            GlobalScreen.addNativeKeyListener(getInputManager());
+            GlobalScreen.addNativeKeyListener(inputManager);
         } catch (NativeHookException e) {
             e.printStackTrace();
         }
 
         FileParser.setClicking(true);
-        for (int j = 0; j < getAmount(); j++) {
+        for (int click = 0; click < amount; click++) {
+
+            //check if escape was clicked and clicker should be stopped.
             if (FileParser.isShouldExit()) {
                 System.out.println("exit clicker loop");
                 break;
             }
+
+            //click and wait
             getMyRobot().typeButton(KeyEvent.BUTTON1_MASK);
-            getMyRobot().delay(getDelay());
+            getMyRobot().delay(delay);
         }
 
         try {

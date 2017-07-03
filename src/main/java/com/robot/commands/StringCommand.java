@@ -7,17 +7,20 @@ import com.robot.MyRobot;
  */
 public class StringCommand extends Command {
 
-    public StringCommand(MyRobot myRobot, String s, boolean debug) {
-        super(myRobot, s, debug);
+    private String toType;
+
+    public StringCommand(MyRobot myRobot, String toType, boolean debug) {
+        super(myRobot, debug);
+        this.toType = toType;
     }
 
     @Override
     public void execute() {
 
-        getMyRobot().typeString(getS());
+        getMyRobot().typeString(toType);
 
         if (isDebug()) {
-            System.out.println("typing " + getS());
+            System.out.println("typing " + toType);
         }
     }
 }
