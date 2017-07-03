@@ -1,0 +1,24 @@
+gui r
+delay 300
+string notepad
+delay 100
+enter
+delay 200
+loop 5
+stringN Y0u G07 h4ck3d!
+delay 200
+stringN yay
+delay 200
+end
+alt 
+right 
+right 
+down 
+down 
+enter 
+tab 
+tab
+delay 100
+string 100
+delay 50
+enter

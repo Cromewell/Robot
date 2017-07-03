@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Jo on 17.06.2017.
- * Parses the given file and executes the commandos.
+ * Parses the given file and returns its commands.
  */
 public class FileParser {
 
@@ -17,7 +17,7 @@ public class FileParser {
     private static boolean clicking = false;
 
     /**
-     * Parses the script file and executes the commands in it.
+     * Parses the script file
      *
      * @param file    Roboscript file
      * @param myRobot Executing robot
@@ -141,8 +141,6 @@ public class FileParser {
                             break;
                         }
                         case "clicker": {
-                            System.out.println(line[1]);
-                            System.out.println(line[2]);
                             commands.add(new ClickerCommand(myRobot, Integer.parseInt(line[1]), Integer.parseInt(line[2]), inputManager, DEBUGGING));
                             finishedLine = true;
                             break;
