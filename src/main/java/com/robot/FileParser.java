@@ -97,6 +97,54 @@ public class FileParser {
                             toExecute.add(KeyEvent.VK_ESCAPE);
                             break;
                         }
+                        case "f1": {
+                            toExecute.add(KeyEvent.VK_F1);
+                            break;
+                        }
+                        case "f2": {
+                            toExecute.add(KeyEvent.VK_F2);
+                            break;
+                        }
+                        case "f3": {
+                            toExecute.add(KeyEvent.VK_F3);
+                            break;
+                        }
+                        case "f4": {
+                            toExecute.add(KeyEvent.VK_F4);
+                            break;
+                        }
+                        case "f5": {
+                            toExecute.add(KeyEvent.VK_F5);
+                            break;
+                        }
+                        case "f6": {
+                            toExecute.add(KeyEvent.VK_F6);
+                            break;
+                        }
+                        case "f7": {
+                            toExecute.add(KeyEvent.VK_F7);
+                            break;
+                        }
+                        case "f8": {
+                            toExecute.add(KeyEvent.VK_F8);
+                            break;
+                        }
+                        case "f9": {
+                            toExecute.add(KeyEvent.VK_F9);
+                            break;
+                        }
+                        case "f10": {
+                            toExecute.add(KeyEvent.VK_F10);
+                            break;
+                        }
+                        case "f11": {
+                            toExecute.add(KeyEvent.VK_F11);
+                            break;
+                        }
+                        case "f12": {
+                            toExecute.add(KeyEvent.VK_F12);
+                            break;
+                        }
                         case "string": {
                             builder.delete(0, builder.length());
                             for (int j = 1; j < line.length; j++) {
