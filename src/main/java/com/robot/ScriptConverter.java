@@ -5,104 +5,111 @@ import com.robot.commands.*;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.security.Key;
 import java.util.ArrayList;
 
 /**
  * Created by Zorro on 05.07.2017.
+ * 
+ * Used to convert Roboscript to Duckyscript
+ * and the other way around.
  */
 public class ScriptConverter {
 
     private static String currentScript = "";
-
     private static String buffer = "";
 
-    public static String convertToDucky(File f){
-        try(BufferedReader reader = new BufferedReader(new FileReader(f))) {
+    /**
+     * Converts the file content to Duckyscript.
+     *
+     * @param f Roboscript file to convert
+     * @return String with Duckyscript code.
+     */
+    public static String convertToDucky(File f) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(f))) {
             Main.setNextCommandPointer(1);
 
-            ArrayList<Command> cmds = FileParser.parseFile(reader,null,null);
-            if(Main.getDefaultDelay()!=0) {
-                addToScript("DEFAULTDELAY " + Main.getDefaultDelay());
+            ArrayList<Command> cmds = FileParser.parseFile(reader, null, null);
+            if (Main.getDefaultDelay() != 0) {
+                addToBuffer("DEFAULTDELAY " + Main.getDefaultDelay());
                 writeToScript();
             }
-            int cP = 0;
-            while((cP=Main.getCurrentCommandPointer())<cmds.size()){
+            int cP;
+            while ((cP = Main.getCurrentCommandPointer()) < cmds.size()) {
                 Command c = cmds.get(cP);
-                if(c instanceof LoopCommand || c instanceof EndLoopCommand){
+                if (c instanceof LoopCommand || c instanceof EndLoopCommand) {
                     c.execute();
-                }else{
-                    if(c instanceof StringCommand){
-                        addToScript("STRING " + ((StringCommand)c).getString());
+                } else {
+                    if (c instanceof StringCommand) {
+                        addToBuffer("STRING " + ((StringCommand) c).getString());
                         writeToScript();
-                    }else if(c instanceof StringNCommand){
-                        addToScript("STRING " + ((StringNCommand)c).getString());
+                    } else if (c instanceof StringNCommand) {
+                        addToBuffer("STRING " + ((StringNCommand) c).getString());
                         writeToScript();
-                        addToScript("ENTER");
+                        addToBuffer("ENTER");
                         writeToScript();
-                    }else if(c instanceof KeyChainCommand){
-                        ArrayList<String> cmd = ((KeyChainCommand)c).getCommands();
-                        for(int i = 0;i<cmd.size();i++){
+                    } else if (c instanceof KeyChainCommand) {
+                        ArrayList<String> cmd = ((KeyChainCommand) c).getCommands();
+                        for (int i = 0; i < cmd.size(); i++) {
                             String s = cmd.get(i);
-                            switch(s){
-                                case "gui":{
-                                    addToScript("CTRL ESCAPE");
+                            switch (s) {
+                                case "gui": {
+                                    addToBuffer("CTRL ESCAPE");
                                     break;
                                 }
-                                case "key_end":{
-                                    addToScript("END");
+                                case "key_end": {
+                                    addToBuffer("END");
                                     break;
                                 }
-                                case "esc":{
-                                    addToScript("ESCAPE");
+                                case "esc": {
+                                    addToBuffer("ESCAPE");
                                     break;
                                 }
-                                case "shift":{
-                                    if(cmd.size()-1>i&&cmd.get(i+1).equals("enter")){
-                                        addToScript("SHIFT-ENTER");
-                                    }else{
-                                        addToScript("SHIFT");
+                                case "shift": {
+                                    if (cmd.size() - 1 > i && cmd.get(i + 1).equals("enter")) {
+                                        addToBuffer("SHIFT-ENTER");
+                                    } else {
+                                        addToBuffer("SHIFT");
                                     }
                                     break;
                                 }
-                                case "ctrl":{
-                                    if(cmd.size()-2>i&&cmd.get(i+1).equals("alt")&&cmd.get(i+2).equals("enter")){
-                                        addToScript("CTRL-ALT-ENTER");
-                                    }else{
-                                        addToScript("CTRL");
+                                case "ctrl": {
+                                    if (cmd.size() - 2 > i && cmd.get(i + 1).equals("alt") && cmd.get(i + 2).equals("enter")) {
+                                        addToBuffer("CTRL-ALT-ENTER");
+                                    } else {
+                                        addToBuffer("CTRL");
                                     }
                                     break;
                                 }
-                                case "alt":{
-                                    if(cmd.size()-1>i&&cmd.get(i+1).equals("f4")){
-                                        addToScript("ALT-F4");
-                                    }else{
-                                        addToScript("ALT");
+                                case "alt": {
+                                    if (cmd.size() - 1 > i && cmd.get(i + 1).equals("f4")) {
+                                        addToBuffer("ALT-F4");
+                                    } else {
+                                        addToBuffer("ALT");
                                     }
                                     break;
                                 }
-                                default:{
-                                    addToScript(s.toUpperCase());
+                                default: {
+                                    addToBuffer(s.toUpperCase());
                                 }
                             }
                         }
                         writeToScript();
-                    }else if(c instanceof DelayCommand){
-                        addToScript("DELAY " + ((DelayCommand)c).getDelay());
+                    } else if (c instanceof DelayCommand) {
+                        addToBuffer("DELAY " + ((DelayCommand) c).getDelay());
                         writeToScript();
                     }
 
 
-                    if(c instanceof ClickerCommand || c instanceof MouseCommand ||c instanceof MouseDCommand || c instanceof MouseLCommand || c instanceof MouseRCommand){
+                    if (c instanceof ClickerCommand || c instanceof MouseCommand || c instanceof MouseDCommand || c instanceof MouseLCommand || c instanceof MouseRCommand) {
                         System.err.println("Robot Script incompatible with DuckyScript, because of Mouse Commands!\nAborting Converting!");
                         System.exit(1);
                     }
 
                 }
-                Main.setNextCommandPointer(Main.getCurrentCommandPointer()+2);
+                Main.setNextCommandPointer(Main.getCurrentCommandPointer() + 2);
             }
 
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         String sc = currentScript;
@@ -110,11 +117,17 @@ public class ScriptConverter {
         return sc;
     }
 
-    public static String convertToRobot(File f){
+    /**
+     * Converts the file content to Roboscript.
+     *
+     * @param f Duckyscript file to convert
+     * @return String with Roboscript code.
+     */
+    public static String convertToRobot(File f) {
 
-        try(BufferedReader reader = new BufferedReader(new FileReader(f))) {
-            String l = "";
-            while((l=reader.readLine())!=null) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(f))) {
+            String l;
+            while ((l = reader.readLine()) != null) {
                 String[] line = l.trim().split("\\s");
 
                 boolean finishedLine = false;
@@ -126,17 +139,17 @@ public class ScriptConverter {
                             break;
                         }
                         case "STRING": {
-                            addToScript("string " + join(line, 1, line.length));
+                            addToBuffer("string " + join(line, 1, line.length));
                             finishedLine = true;
                             break;
                         }
                         case "ENTER": {
-                            addToScript("enter");
+                            addToBuffer("enter");
                             finishedLine = true;
                             break;
                         }
                         case "DELAY": {
-                            addToScript("delay " + line[1]);
+                            addToBuffer("delay " + line[1]);
                             finishedLine = true;
                             break;
                         }
@@ -148,132 +161,132 @@ public class ScriptConverter {
                         }
                         case "CONTROL":
                         case "CTRL": {
-                            if (line.length > i+1 && (line[1].equals("ESC") || line[i+1].equals("ESCAPE"))) {
-                                addToScript("gui");
+                            if (line.length > i + 1 && (line[1].equals("ESC") || line[i + 1].equals("ESCAPE"))) {
+                                addToBuffer("gui");
                                 i++;
                                 break;
                             }
-                            addToScript("ctrl");
+                            addToBuffer("ctrl");
                             break;
                         }
                         case "SHIFT": {
-                            addToScript("shift");
+                            addToBuffer("shift");
                             break;
                         }
                         case "ALT": {
-                            addToScript("alt");
+                            addToBuffer("alt");
                             break;
                         }
                         case "APP": {
-                            addToScript("shift f10");
+                            addToBuffer("shift f10");
                             break;
                         }
-                        case "MENU":{
-                            addToScript("shift f10");
+                        case "MENU": {
+                            addToBuffer("shift f10");
                             break;
                         }
                         case "DOWN":
                         case "DOWNARROW": {
-                            addToScript("down");
+                            addToBuffer("down");
                             break;
                         }
                         case "LEFT":
                         case "LEFTARROW": {
-                            addToScript("left");
+                            addToBuffer("left");
                             break;
                         }
                         case "RIGHT":
                         case "RIGHTARROW": {
-                            addToScript("right");
+                            addToBuffer("right");
                             break;
                         }
                         case "UP":
                         case "UPARROW": {
-                            addToScript("up");
+                            addToBuffer("up");
                             break;
                         }
                         case "CAPSLOCK": {
-                            addToScript("capslock");
+                            addToBuffer("capslock");
                             break;
                         }
                         case "DELETE": {
-                            addToScript("delete");
+                            addToBuffer("delete");
                             break;
                         }
                         case "END": {
-                            addToScript("key_end");
+                            addToBuffer("key_end");
                             break;
                         }
                         case "ESC":
                         case "ESCAPE": {
-                            addToScript("esc");
+                            addToBuffer("esc");
                             break;
                         }
                         case "INSERT": {
-                            addToScript("insert");
+                            addToBuffer("insert");
                             break;
                         }
                         case "NUMLOCK": {
-                            addToScript("numlock");
+                            addToBuffer("numlock");
                             break;
                         }
                         case "PAGEUP": {
-                            addToScript("pageup");
+                            addToBuffer("pageup");
                             break;
                         }
                         case "PAGEDOWN": {
-                            addToScript("pagedown");
+                            addToBuffer("pagedown");
                             break;
                         }
                         case "PRINTSCREEN": {
-                            addToScript("printscreen");
+                            addToBuffer("printscreen");
                             break;
                         }
                         case "SPACE": {
-                            addToScript("space");
+                            addToBuffer("space");
                             break;
                         }
                         case "TAB": {
-                            addToScript("tab");
+                            addToBuffer("tab");
                             break;
                         }
                         case "SHIFT-ENTER": {
-                            addToScript("shift enter");
+                            addToBuffer("shift enter");
                             break;
                         }
                         case "CTRL-ALT-DEL": {
-                            addToScript("ctrl alt delete");
+                            addToBuffer("ctrl alt delete");
                             break;
                         }
                         case "ALT-F4": {
-                            addToScript("alt f4");
+                            addToBuffer("alt f4");
                             break;
                         }
-                        case "WINDOWS":{
-                            addToScript("gui");
+                        case "WINDOWS": {
+                            addToBuffer("gui");
                             break;
                         }
-                        case "GUI":{
-                            addToScript("gui");
+                        case "GUI": {
+                            addToBuffer("gui");
                             break;
                         }
 
                         case "DEFAULTDELAY": {
-                            addToScript("defaultdelay " + line[1]);
+                            addToBuffer("defaultdelay " + line[1]);
                             finishedLine = true;
                             break;
                         }
                         case "PAUSE":
-                        case "BREAK":{
-                            addToScript("ctrl break");
+                        case "BREAK": {
+                            addToBuffer("ctrl break");
                             break;
                         }
-                        case "HOME":{
-                            addToScript("home");
+                        case "HOME": {
+                            addToBuffer("home");
                             break;
                         }
-                        default:{
-                            addToScript(line[i].toLowerCase());
+                        default: {
+                            addToBuffer(line[i].toLowerCase());
                         }
                     }
                     if (finishedLine || i + 1 >= line.length) {
@@ -282,7 +295,7 @@ public class ScriptConverter {
                     }
                 }
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         String sc = currentScript;
@@ -290,36 +303,60 @@ public class ScriptConverter {
         return sc;
     }
 
+    /**
+     * Concats a string array with one whitespace between each member.
+     *
+     * @param line Array to concat.
+     * @param i    Start index.
+     * @param max  Array length.
+     * @return String of the array content.
+     */
     private static String join(String[] line, int i, int max) {
-        String joined = "";
-        for(int l = i;l<max;l++){
-            joined+=" " + line[l];
+        StringBuilder joined = new StringBuilder();
+        for (int l = i; l < max; l++) {
+            joined.append(" ").append(line[l]);
         }
         return joined.substring(1);
     }
 
-    private static void writeToScript(){
-        if(!buffer.isEmpty()){
-            currentScript+=buffer;
-            if(!buffer.endsWith("\n")){
-                currentScript+="\n";
+    /**
+     * Writes buffer content into currentScript.
+     */
+    private static void writeToScript() {
+        if (!buffer.isEmpty()) {
+            currentScript += buffer;
+            if (!buffer.endsWith("\n")) {
+                currentScript += "\n";
             }
         }
         buffer = "";
     }
 
-    private static void addToScript(String script){
-        if(!buffer.isEmpty()){
-            buffer+=" ";
+    /**
+     * Adds a script fragment to the buffer.
+     *
+     * @param script Script fragment to add.
+     */
+    private static void addToBuffer(String script) {
+        if (!buffer.isEmpty()) {
+            buffer += " ";
         }
-        buffer+= script;
+        buffer += script;
     }
 
-    private static String getBufferScript(){
+    /**
+     * @return Buffer content.
+     */
+    private static String getBufferScript() {
         return buffer;
     }
 
-    private static void setBufferScript(String script){
+    /**
+     * Sets buffer content to a given string.
+     *
+     * @param script String to set.
+     */
+    private static void setBufferScript(String script) {
         buffer = script;
     }
 }
