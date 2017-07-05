@@ -38,7 +38,7 @@ public class Main {
     /**
      * The Delay that happens between every Command (Exception: LoopCommand and EndLoopCommand)
      */
-    private static long defaultDelay;
+    private static long defaultDelay = 0;
 
     /**
      * Command to convert to DuckyScript
@@ -128,7 +128,7 @@ public class Main {
 
         for (cPointer = 0; cPointer < commands.size(); cPointer++) {
             Command c = commands.get(cPointer);
-            if(!(c instanceof LoopCommand)&&!(c instanceof EndLoopCommand)){
+            if(!(c instanceof LoopCommand)&&!(c instanceof EndLoopCommand)&&defaultDelay!=0){
                 try {
                     Thread.sleep(defaultDelay);
                 }catch(InterruptedException exc){
@@ -209,5 +209,13 @@ public class Main {
      */
     public static void setDefaultDelay(Long defaultDelay) {
         Main.defaultDelay = defaultDelay;
+    }
+
+    /**
+     * Returns the Default Delay between every Command
+     * @return The Default Delay
+     */
+    public static long getDefaultDelay(){
+        return defaultDelay;
     }
 }
