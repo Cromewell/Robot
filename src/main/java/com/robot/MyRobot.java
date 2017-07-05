@@ -2,6 +2,7 @@ package com.robot;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.security.Key;
 import java.util.ArrayList;
 
 /**
@@ -31,6 +32,14 @@ public class MyRobot extends Robot {
                 }
                 case '?': {
                     typeQuestionMark();
+                    break;
+                }
+                case '"':{
+                    typeQuotationMark();
+                    break;
+                }
+                case '=':{
+                    typeEqual();
                     break;
                 }
                 case ';': {
@@ -115,6 +124,20 @@ public class MyRobot extends Robot {
                     break;
             }
         }
+    }
+
+    private void typeQuotationMark() {
+        keyPress(KeyEvent.VK_SHIFT);
+        keyPress(KeyEvent.VK_2);
+        keyRelease(KeyEvent.VK_2);
+        keyRelease(KeyEvent.VK_SHIFT);
+    }
+
+    private void typeEqual(){
+        keyPress(KeyEvent.VK_SHIFT);
+        keyPress(KeyEvent.VK_0);
+        keyRelease(KeyEvent.VK_0);
+        keyRelease(KeyEvent.VK_SHIFT);
     }
 
     private void typeSharpS() {

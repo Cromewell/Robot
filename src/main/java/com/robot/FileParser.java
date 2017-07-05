@@ -242,6 +242,7 @@ public class FileParser {
                         }
                         case "defaultdelay":{
                             Main.setDefaultDelay(Long.valueOf(line[1]));
+                            finishedLine = true;
                             break;
                         }
                         case "capslock":{

@@ -22,6 +22,10 @@ public class ScriptConverter {
             Main.setNextCommandPointer(1);
 
             ArrayList<Command> cmds = FileParser.parseFile(reader,null,null);
+            if(Main.getDefaultDelay()!=0) {
+                addToScript("DEFAULTDELAY " + Main.getDefaultDelay());
+                writeToScript();
+            }
             int cP = 0;
             while((cP=Main.getCurrentCommandPointer())<cmds.size()){
                 Command c = cmds.get(cP);
@@ -42,7 +46,7 @@ public class ScriptConverter {
                             String s = cmd.get(i);
                             switch(s){
                                 case "gui":{
-                                    addToScript("CTRL ESC");
+                                    addToScript("CTRL ESCAPE");
                                     break;
                                 }
                                 case "key_end":{
@@ -81,6 +85,7 @@ public class ScriptConverter {
                                 }
                             }
                         }
+                        writeToScript();
                     }else if(c instanceof DelayCommand){
                         addToScript("DELAY " + ((DelayCommand)c).getDelay());
                         writeToScript();
@@ -140,16 +145,13 @@ public class ScriptConverter {
                             finishedLine = true;
                             break;
                         }
+                        case "CONTROL":
                         case "CTRL": {
-                            if (line.length == 2 && line[1].equals("ESC")) {
-                                addToScript("GUI");
+                            if (line.length > i+1 && (line[1].equals("ESC") || line[i+1].equals("ESCAPE"))) {
+                                addToScript("gui");
                                 i++;
                                 break;
                             }
-                            addToScript("ctrl");
-                            break;
-                        }
-                        case "CONTROL":{
                             addToScript("ctrl");
                             break;
                         }
@@ -201,6 +203,7 @@ public class ScriptConverter {
                             addToScript("key_end");
                             break;
                         }
+                        case "ESC":
                         case "ESCAPE": {
                             addToScript("esc");
                             break;
@@ -269,11 +272,7 @@ public class ScriptConverter {
                             break;
                         }
                         default:{
-                            if(line[i].matches("F[0-9][0-2]?")){
-                                addToScript(line[i].toLowerCase());
-                                break;
-                            }
-                            addToScript(line[i]);
+                            addToScript(line[i].toLowerCase());
                         }
                     }
                     if (finishedLine || i + 1 >= line.length) {
