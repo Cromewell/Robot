@@ -79,6 +79,7 @@ public class ScriptConverter {
                                     }else{
                                         addToScript("ALT");
                                     }
+                                    break;
                                 }
                                 default:{
                                     addToScript(s.toUpperCase());
