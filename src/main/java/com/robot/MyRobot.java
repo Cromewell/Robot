@@ -50,6 +50,30 @@ public class MyRobot extends Robot {
                     typeDollarSign();
                     break;
                 }
+                case '§':{
+                    typeParagraphSign();
+                    break;
+                }
+                case '%':{
+                    typePercentSign();
+                    break;
+                }
+                case '&':{
+                    typeAndSign();
+                    break;
+                }
+                case '_':{
+                    typeUnderscore();
+                    break;
+                }
+                case '*':{
+                    typeStar();
+                    break;
+                }
+                case '~':{
+                    typeTilde();
+                    break;
+                }
                 case '=':{
                     typeEqual();
                     break;
@@ -136,6 +160,60 @@ public class MyRobot extends Robot {
                     break;
             }
         }
+    }
+
+    private void typeStar() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD4);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeTilde() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD1);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        typeKey(KeyEvent.VK_NUMPAD6);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeUnderscore() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD9);
+        typeKey(KeyEvent.VK_NUMPAD5);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeAndSign() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD3);
+        typeKey(KeyEvent.VK_NUMPAD8);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typePercentSign() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD3);
+        typeKey(KeyEvent.VK_NUMPAD7);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeParagraphSign() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD1);
+        typeKey(KeyEvent.VK_NUMPAD6);
+        typeKey(KeyEvent.VK_NUMPAD7);
+        keyRelease(KeyEvent.VK_ALT);
     }
 
     private void typeDollarSign() {
