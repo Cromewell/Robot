@@ -78,6 +78,18 @@ public class MyRobot extends Robot {
                     typeEqual();
                     break;
                 }
+                case '<':{
+                    typeLesserThan();
+                    break;
+                }
+                case '>':{
+                    typeGreaterThan();
+                    break;
+                }
+                case '@':{
+                    typeAt();
+                    break;
+                }
                 case ';': {
                     typeSemicolon();
                     break;
@@ -160,6 +172,33 @@ public class MyRobot extends Robot {
                     break;
             }
         }
+    }
+
+    private void typeAt() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD6);
+        typeKey(KeyEvent.VK_NUMPAD4);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeGreaterThan() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD6);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeLesserThan() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD6);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        keyRelease(KeyEvent.VK_ALT);
     }
 
     private void typeStar() {
@@ -253,10 +292,12 @@ public class MyRobot extends Robot {
     }
 
     private void typeEqual(){
-        keyPress(KeyEvent.VK_SHIFT);
-        keyPress(KeyEvent.VK_0);
-        keyRelease(KeyEvent.VK_0);
-        keyRelease(KeyEvent.VK_SHIFT);
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD6);
+        typeKey(KeyEvent.VK_NUMPAD1);
+        keyRelease(KeyEvent.VK_ALT);
     }
 
     private void typeSharpS() {
