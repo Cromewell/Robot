@@ -166,10 +166,12 @@ public class MyRobot extends Robot {
     }
 
     private void typeQuotationMark() {
-        keyPress(KeyEvent.VK_SHIFT);
-        keyPress(KeyEvent.VK_2);
-        keyRelease(KeyEvent.VK_2);
-        keyRelease(KeyEvent.VK_SHIFT);
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD3);
+        typeKey(KeyEvent.VK_NUMPAD4);
+        keyRelease(KeyEvent.VK_ALT);
     }
 
     private void typeEqual(){
@@ -243,60 +245,76 @@ public class MyRobot extends Robot {
     }
 
     private void typeClosedSquareBracket() {
-        keyPress(KeyEvent.VK_CONTROL);
         keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_9);
-        keyRelease(KeyEvent.VK_CONTROL);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD9);
+        typeKey(KeyEvent.VK_NUMPAD3);
         keyRelease(KeyEvent.VK_ALT);
     }
 
     private void typeOpenedSquareBracket() {
-        keyPress(KeyEvent.VK_CONTROL);
         keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_8);
-        keyRelease(KeyEvent.VK_CONTROL);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD9);
+        typeKey(KeyEvent.VK_NUMPAD1);
         keyRelease(KeyEvent.VK_ALT);
     }
 
     private void typeClosedCurlyBracket() {
-        keyPress(KeyEvent.VK_CONTROL);
         keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_0);
-        keyRelease(KeyEvent.VK_CONTROL);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD1);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        typeKey(KeyEvent.VK_NUMPAD5);
         keyRelease(KeyEvent.VK_ALT);
     }
 
     private void typeOpenedCurlyBracket() {
-        keyPress(KeyEvent.VK_CONTROL);
         keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_7);
-        keyRelease(KeyEvent.VK_CONTROL);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD1);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        typeKey(KeyEvent.VK_NUMPAD3);
         keyRelease(KeyEvent.VK_ALT);
     }
 
     private void typeOpenedBracket() {
-        keyPress(KeyEvent.VK_SHIFT);
-        typeKey(KeyEvent.VK_8);
-        keyRelease(KeyEvent.VK_SHIFT);
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD4);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        keyRelease(KeyEvent.VK_ALT);
     }
 
     private void typeClosedBracket() {
-        keyPress(KeyEvent.VK_SHIFT);
-        typeKey(KeyEvent.VK_9);
-        keyRelease(KeyEvent.VK_SHIFT);
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD4);
+        typeKey(KeyEvent.VK_NUMPAD1);
+        keyRelease(KeyEvent.VK_ALT);
     }
 
     private void typeBackslash() {
         keyPress(KeyEvent.VK_ALT);
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
         typeKey(KeyEvent.VK_NUMPAD9);
         typeKey(KeyEvent.VK_NUMPAD2);
         keyRelease(KeyEvent.VK_ALT);
     }
 
     private void typeExclamationMark() {
-        keyPress(KeyEvent.VK_SHIFT);
-        typeKey(KeyEvent.VK_1);
-        keyRelease(KeyEvent.VK_SHIFT);
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD3);
+        typeKey(KeyEvent.VK_NUMPAD3);
+        keyRelease(KeyEvent.VK_ALT);
     }
 
     private void typeQuestionMark() {
@@ -309,21 +327,30 @@ public class MyRobot extends Robot {
     }
 
     private void typeSemicolon() {
-        keyPress(KeyEvent.VK_SHIFT);
-        typeKey(KeyEvent.VK_COMMA);
-        keyRelease(KeyEvent.VK_SHIFT);
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD5);
+        typeKey(KeyEvent.VK_NUMPAD9);
+        keyRelease(KeyEvent.VK_ALT);
     }
 
     private void typeColon() {
-        keyPress(KeyEvent.VK_SHIFT);
-        typeKey(KeyEvent.VK_PERIOD);
-        keyRelease(KeyEvent.VK_SHIFT);
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD5);
+        typeKey(KeyEvent.VK_NUMPAD8);
+        keyRelease(KeyEvent.VK_ALT);
     }
 
     private void typeSlash() {
-        keyPress(KeyEvent.VK_SHIFT);
-        typeKey(KeyEvent.VK_7);
-        keyRelease(KeyEvent.VK_SHIFT);
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD4);
+        typeKey(KeyEvent.VK_NUMPAD7);
+        keyRelease(KeyEvent.VK_ALT);
     }
 
     /**

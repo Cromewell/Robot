@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="897ca9b4-fb70-49d3-b53c-8c741f92de39" name="Default" comment="fix">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robot/MyRobot.java" afterPath="$PROJECT_DIR$/src/main/java/com/robot/MyRobot.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robot/ScriptConverter.java" afterPath="$PROJECT_DIR$/src/main/java/com/robot/ScriptConverter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -82,8 +81,8 @@
       <file leaf-file-name="MyRobot.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/robot/MyRobot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1081">
-              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+            <state relative-caret-position="578">
+              <caret line="143" column="37" lean-forward="true" selection-start-line="143" selection-start-column="37" selection-end-line="143" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -1438,8 +1437,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/robot/MyRobot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1081">
-          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        <state relative-caret-position="578">
+          <caret line="143" column="37" lean-forward="true" selection-start-line="143" selection-start-column="37" selection-end-line="143" selection-end-column="37" />
           <folding />
         </state>
       </provider>
