@@ -26,4 +26,8 @@ public class StringNCommand extends Command {
             System.out.println("typing " + toType);
         }
     }
+
+    public String getString(){
+        return toType;
+    }
 }

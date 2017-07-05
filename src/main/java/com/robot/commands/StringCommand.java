@@ -23,4 +23,8 @@ public class StringCommand extends Command {
             System.out.println("typing " + toType);
         }
     }
+
+    public String getString(){
+        return toType;
+    }
 }
