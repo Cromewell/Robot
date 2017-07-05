@@ -7,6 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="897ca9b4-fb70-49d3-b53c-8c741f92de39" name="Default" comment="fix">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Robot_jar/Robot.jar" afterPath="$PROJECT_DIR$/out/artifacts/Robot_jar/Robot.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/robot/MyRobot.class" afterPath="$PROJECT_DIR$/target/classes/com/robot/MyRobot.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robot/MyRobot.java" afterPath="$PROJECT_DIR$/src/main/java/com/robot/MyRobot.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -60,10 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileParser.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FileParser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/robot/FileParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-113">
+            <state relative-caret-position="3304">
               <caret line="204" column="34" lean-forward="false" selection-start-line="204" selection-start-column="34" selection-end-line="204" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -78,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyRobot.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyRobot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/robot/MyRobot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="181" column="35" lean-forward="false" selection-start-line="181" selection-start-column="35" selection-end-line="181" selection-end-column="35" />
+            <state relative-caret-position="1791">
+              <caret line="517" column="48" lean-forward="true" selection-start-line="517" selection-start-column="48" selection-end-line="517" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -91,7 +94,7 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/robot/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
+            <state relative-caret-position="652">
               <caret line="57" column="44" lean-forward="true" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
               <folding>
                 <element signature="e#4669#4670#0" expanded="true" />
@@ -1376,9 +1379,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/robot/MyRobot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1791">
+          <caret line="517" column="48" lean-forward="true" selection-start-line="517" selection-start-column="48" selection-end-line="517" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/robot/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
+        <state relative-caret-position="652">
           <caret line="57" column="44" lean-forward="true" selection-start-line="57" selection-start-column="44" selection-end-line="57" selection-end-column="44" />
           <folding>
             <element signature="e#4669#4670#0" expanded="true" />
@@ -1421,7 +1432,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/robot/FileParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-113">
+        <state relative-caret-position="3304">
           <caret line="204" column="34" lean-forward="false" selection-start-line="204" selection-start-column="34" selection-end-line="204" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1432,14 +1443,6 @@
             <marker date="1499253295751" expanded="false" signature="13583:13594" ph=" { " />
             <marker date="1499253295751" expanded="false" signature="13612:13618" ph=" }" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/robot/MyRobot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="181" column="35" lean-forward="false" selection-start-line="181" selection-start-column="35" selection-end-line="181" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>

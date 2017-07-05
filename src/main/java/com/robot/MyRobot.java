@@ -515,7 +515,7 @@ public class MyRobot extends Robot {
     public void executeKeyChain(ArrayList<Integer> keys) {
         for (int key : keys) {
             keyPress(key);
-            delay(80);
+            delay((int) Main.getDefaultDelay());
         }
         for (int key : keys) {
             keyRelease(key);
