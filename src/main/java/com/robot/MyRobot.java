@@ -102,9 +102,16 @@ public class MyRobot extends Robot {
                     break;
                 }
                 default:
+
                     c = KeyEvent.getExtendedKeyCodeForChar(s.charAt(i));
+                    if(Character.isUpperCase(s.charAt(i))){
+                        keyPress(KeyEvent.VK_SHIFT);
+                    }
                     keyPress(c);
                     keyRelease(c);
+                    if(Character.isUpperCase(s.charAt(i))){
+                        keyRelease(KeyEvent.VK_SHIFT);
+                    }
                     break;
             }
         }

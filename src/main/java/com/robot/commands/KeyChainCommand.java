@@ -12,10 +12,12 @@ import java.util.ArrayList;
 public class KeyChainCommand extends Command {
 
     private ArrayList<Integer> keys;
+    private ArrayList<String> commands;
 
-    public KeyChainCommand(MyRobot myRobot, ArrayList<Integer> keys, boolean debug) {
+    public KeyChainCommand(MyRobot myRobot, ArrayList<Integer> keys, ArrayList<String> commands, boolean debug) {
         super(myRobot, debug);
         this.keys = keys;
+        this.commands = commands;
     }
 
     @Override
@@ -27,5 +29,9 @@ public class KeyChainCommand extends Command {
                 System.out.println("pressing " + KeyEvent.getKeyText(key));
             }
         }
+    }
+
+    public ArrayList<String> getCommands(){
+        return commands;
     }
 }

@@ -22,4 +22,8 @@ public class DelayCommand extends Command {
             System.out.println("waiting " + time + " ms");
         }
     }
+
+    public int getDelay(){
+        return time;
+    }
 }
