@@ -38,6 +38,18 @@ public class MyRobot extends Robot {
                     typeQuotationMark();
                     break;
                 }
+                case '\'':{
+                    typeApostrophe();
+                    break;
+                }
+                case '|':{
+                    typePipe();
+                    break;
+                }
+                case '$':{
+                    typeDollarSign();
+                    break;
+                }
                 case '=':{
                     typeEqual();
                     break;
@@ -124,6 +136,33 @@ public class MyRobot extends Robot {
                     break;
             }
         }
+    }
+
+    private void typeDollarSign() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD3);
+        typeKey(KeyEvent.VK_NUMPAD6);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typePipe() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD1);
+        typeKey(KeyEvent.VK_NUMPAD2);
+        typeKey(KeyEvent.VK_NUMPAD4);
+        keyRelease(KeyEvent.VK_ALT);
+    }
+
+    private void typeApostrophe() {
+        keyPress(KeyEvent.VK_ALT);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD0);
+        typeKey(KeyEvent.VK_NUMPAD3);
+        typeKey(KeyEvent.VK_NUMPAD9);
+        keyRelease(KeyEvent.VK_ALT);
     }
 
     private void typeQuotationMark() {

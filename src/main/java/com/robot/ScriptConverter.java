@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  * Created by Zorro on 05.07.2017.
- * 
+ *
  * Used to convert Roboscript to Duckyscript
  * and the other way around.
  */
