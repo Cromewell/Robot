@@ -34,59 +34,59 @@ public class MyRobot extends Robot {
                     typeQuestionMark();
                     break;
                 }
-                case '"':{
+                case '"': {
                     typeQuotationMark();
                     break;
                 }
-                case '\'':{
+                case '\'': {
                     typeApostrophe();
                     break;
                 }
-                case '|':{
+                case '|': {
                     typePipe();
                     break;
                 }
-                case '$':{
+                case '$': {
                     typeDollarSign();
                     break;
                 }
-                case '§':{
+                case '§': {
                     typeParagraphSign();
                     break;
                 }
-                case '%':{
+                case '%': {
                     typePercentSign();
                     break;
                 }
-                case '&':{
+                case '&': {
                     typeAndSign();
                     break;
                 }
-                case '_':{
+                case '_': {
                     typeUnderscore();
                     break;
                 }
-                case '*':{
+                case '*': {
                     typeStar();
                     break;
                 }
-                case '~':{
+                case '~': {
                     typeTilde();
                     break;
                 }
-                case '=':{
+                case '=': {
                     typeEqual();
                     break;
                 }
-                case '<':{
+                case '<': {
                     typeLesserThan();
                     break;
                 }
-                case '>':{
+                case '>': {
                     typeGreaterThan();
                     break;
                 }
-                case '@':{
+                case '@': {
                     typeAt();
                     break;
                 }
@@ -161,12 +161,12 @@ public class MyRobot extends Robot {
                 default:
 
                     c = KeyEvent.getExtendedKeyCodeForChar(s.charAt(i));
-                    if(Character.isUpperCase(s.charAt(i))){
+                    if (Character.isUpperCase(s.charAt(i))) {
                         keyPress(KeyEvent.VK_SHIFT);
                     }
                     keyPress(c);
                     keyRelease(c);
-                    if(Character.isUpperCase(s.charAt(i))){
+                    if (Character.isUpperCase(s.charAt(i))) {
                         keyRelease(KeyEvent.VK_SHIFT);
                     }
                     break;
@@ -175,301 +175,664 @@ public class MyRobot extends Robot {
     }
 
     private void typeAt() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD6);
-        typeKey(KeyEvent.VK_NUMPAD4);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD6);
+            typeKey(KeyEvent.VK_NUMPAD4);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_4);
+            typeKey(KeyEvent.VK_0);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeGreaterThan() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD6);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD6);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_3);
+            typeKey(KeyEvent.VK_E);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeLesserThan() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD6);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD6);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_3);
+            typeKey(KeyEvent.VK_C);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeStar() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD4);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD4);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_2);
+            typeKey(KeyEvent.VK_A);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeTilde() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD1);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        typeKey(KeyEvent.VK_NUMPAD6);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD1);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            typeKey(KeyEvent.VK_NUMPAD6);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_7);
+            typeKey(KeyEvent.VK_E);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeUnderscore() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD9);
-        typeKey(KeyEvent.VK_NUMPAD5);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD9);
+            typeKey(KeyEvent.VK_NUMPAD5);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_5);
+            typeKey(KeyEvent.VK_F);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeAndSign() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD3);
-        typeKey(KeyEvent.VK_NUMPAD8);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD3);
+            typeKey(KeyEvent.VK_NUMPAD8);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_2);
+            typeKey(KeyEvent.VK_6);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typePercentSign() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD3);
-        typeKey(KeyEvent.VK_NUMPAD7);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD3);
+            typeKey(KeyEvent.VK_NUMPAD7);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_2);
+            typeKey(KeyEvent.VK_5);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeParagraphSign() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD1);
-        typeKey(KeyEvent.VK_NUMPAD6);
-        typeKey(KeyEvent.VK_NUMPAD7);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD1);
+            typeKey(KeyEvent.VK_NUMPAD6);
+            typeKey(KeyEvent.VK_NUMPAD7);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_A);
+            typeKey(KeyEvent.VK_7);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeDollarSign() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD3);
-        typeKey(KeyEvent.VK_NUMPAD6);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD3);
+            typeKey(KeyEvent.VK_NUMPAD6);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_2);
+            typeKey(KeyEvent.VK_4);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typePipe() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD1);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        typeKey(KeyEvent.VK_NUMPAD4);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD1);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            typeKey(KeyEvent.VK_NUMPAD4);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_7);
+            typeKey(KeyEvent.VK_C);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeApostrophe() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD3);
-        typeKey(KeyEvent.VK_NUMPAD9);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD3);
+            typeKey(KeyEvent.VK_NUMPAD9);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_2);
+            typeKey(KeyEvent.VK_7);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeQuotationMark() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD3);
-        typeKey(KeyEvent.VK_NUMPAD4);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD3);
+            typeKey(KeyEvent.VK_NUMPAD4);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_2);
+            typeKey(KeyEvent.VK_2);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
-    private void typeEqual(){
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD6);
-        typeKey(KeyEvent.VK_NUMPAD1);
-        keyRelease(KeyEvent.VK_ALT);
+    private void typeEqual() {
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD6);
+            typeKey(KeyEvent.VK_NUMPAD1);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_3);
+            typeKey(KeyEvent.VK_D);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeSharpS() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        typeKey(KeyEvent.VK_NUMPAD3);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            typeKey(KeyEvent.VK_NUMPAD3);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_D);
+            typeKey(KeyEvent.VK_F);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeUppercaseUe() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_D);
+            typeKey(KeyEvent.VK_C);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeLowercaseUe() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        typeKey(KeyEvent.VK_NUMPAD5);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            typeKey(KeyEvent.VK_NUMPAD5);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_F);
+            typeKey(KeyEvent.VK_C);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeLowercaseOe() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        typeKey(KeyEvent.VK_NUMPAD4);
-        typeKey(KeyEvent.VK_NUMPAD6);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            typeKey(KeyEvent.VK_NUMPAD4);
+            typeKey(KeyEvent.VK_NUMPAD6);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_F);
+            typeKey(KeyEvent.VK_6);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeUppercaseOe() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        typeKey(KeyEvent.VK_NUMPAD1);
-        typeKey(KeyEvent.VK_NUMPAD4);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            typeKey(KeyEvent.VK_NUMPAD1);
+            typeKey(KeyEvent.VK_NUMPAD4);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_D);
+            typeKey(KeyEvent.VK_6);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeLowercaseAe() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        typeKey(KeyEvent.VK_NUMPAD8);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            typeKey(KeyEvent.VK_NUMPAD8);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_E);
+            typeKey(KeyEvent.VK_4);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeUppercaseAe() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD1);
-        typeKey(KeyEvent.VK_NUMPAD9);
-        typeKey(KeyEvent.VK_NUMPAD6);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD1);
+            typeKey(KeyEvent.VK_NUMPAD9);
+            typeKey(KeyEvent.VK_NUMPAD6);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_C);
+            typeKey(KeyEvent.VK_4);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeClosedSquareBracket() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD9);
-        typeKey(KeyEvent.VK_NUMPAD3);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD9);
+            typeKey(KeyEvent.VK_NUMPAD3);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_5);
+            typeKey(KeyEvent.VK_D);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeOpenedSquareBracket() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD9);
-        typeKey(KeyEvent.VK_NUMPAD1);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD9);
+            typeKey(KeyEvent.VK_NUMPAD1);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_5);
+            typeKey(KeyEvent.VK_B);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeClosedCurlyBracket() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD1);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        typeKey(KeyEvent.VK_NUMPAD5);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD1);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            typeKey(KeyEvent.VK_NUMPAD5);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_7);
+            typeKey(KeyEvent.VK_D);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeOpenedCurlyBracket() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD1);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        typeKey(KeyEvent.VK_NUMPAD3);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD1);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            typeKey(KeyEvent.VK_NUMPAD3);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_7);
+            typeKey(KeyEvent.VK_B);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeOpenedBracket() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD4);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD4);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_2);
+            typeKey(KeyEvent.VK_8);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeClosedBracket() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD4);
-        typeKey(KeyEvent.VK_NUMPAD1);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD4);
+            typeKey(KeyEvent.VK_NUMPAD1);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_2);
+            typeKey(KeyEvent.VK_9);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeBackslash() {
-        keyPress(KeyEvent.VK_ALT);
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD9);
-        typeKey(KeyEvent.VK_NUMPAD2);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD9);
+            typeKey(KeyEvent.VK_NUMPAD2);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_5);
+            typeKey(KeyEvent.VK_C);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeExclamationMark() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD3);
-        typeKey(KeyEvent.VK_NUMPAD3);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD3);
+            typeKey(KeyEvent.VK_NUMPAD3);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_2);
+            typeKey(KeyEvent.VK_1);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeQuestionMark() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD6);
-        typeKey(KeyEvent.VK_NUMPAD3);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD6);
+            typeKey(KeyEvent.VK_NUMPAD3);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_3);
+            typeKey(KeyEvent.VK_F);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeSemicolon() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD5);
-        typeKey(KeyEvent.VK_NUMPAD9);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD5);
+            typeKey(KeyEvent.VK_NUMPAD9);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_3);
+            typeKey(KeyEvent.VK_B);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeColon() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD5);
-        typeKey(KeyEvent.VK_NUMPAD8);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD5);
+            typeKey(KeyEvent.VK_NUMPAD8);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_3);
+            typeKey(KeyEvent.VK_A);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     private void typeSlash() {
-        keyPress(KeyEvent.VK_ALT);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD0);
-        typeKey(KeyEvent.VK_NUMPAD4);
-        typeKey(KeyEvent.VK_NUMPAD7);
-        keyRelease(KeyEvent.VK_ALT);
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD4);
+            typeKey(KeyEvent.VK_NUMPAD7);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_2);
+            typeKey(KeyEvent.VK_F);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+        }
     }
 
     /**

@@ -55,15 +55,24 @@ public class Main {
      */
     private final static String runDuckyCommand = "-rD";
 
+    private static boolean windowsMachine;
+
     public static void main(String[] args) {
         loopEntries = new HashMap<Integer, LoopCommand>();
+
+        if (System.getProperty("os.name").contains("Win")
+                || System.getProperty("os.name").contains("win")) {
+            windowsMachine = true;
+        } else {
+            windowsMachine = false;
+        }
 
         int convert = -1;
 
         if (args.length < 1) {
             throw new IllegalArgumentException("Needs one script as argument.");
-        }else if(args.length>1){
-            switch(args[1]){
+        } else if (args.length > 1) {
+            switch (args[1]) {
                 case convertToDuckyCommand:
                     convert = 1;
                     break;
@@ -82,10 +91,10 @@ public class Main {
         try {
             if (convert == -1) {
                 reader = new BufferedReader(new FileReader(commandFile));
-            }else if(convert==1) {
+            } else if (convert == 1) {
                 String script = ScriptConverter.convertToDucky(commandFile);
                 File f = new File(commandFile.getName() + ".ducky");
-                if(f.exists()){
+                if (f.exists()) {
                     f.delete();
                 }
                 f.createNewFile();
@@ -95,10 +104,10 @@ public class Main {
                 pw.close();
                 System.out.println("Converted RobotScript " + commandFile.getName() + " to DuckyScript " + f.getName());
                 System.exit(0);
-            }else if(convert==2){
+            } else if (convert == 2) {
                 String script = ScriptConverter.convertToRobot(commandFile);
                 File f = new File(commandFile.getName() + ".robot");
-                if(f.exists()){
+                if (f.exists()) {
                     f.delete();
                 }
                 f.createNewFile();
@@ -108,13 +117,13 @@ public class Main {
                 pw.close();
                 System.out.println("Converted DuckyScript " + commandFile.getName() + " to RobotScript " + f.getName());
                 System.exit(0);
-            }else if(convert==3){
+            } else if (convert == 3) {
                 String script = ScriptConverter.convertToRobot(commandFile);
                 System.out.println(script);
                 StringReader sr = new StringReader(script);
                 reader = new BufferedReader(sr);
             }
-        }catch(IOException exc){
+        } catch (IOException exc) {
             exc.printStackTrace();
         }
         try {
@@ -128,10 +137,10 @@ public class Main {
 
         for (cPointer = 0; cPointer < commands.size(); cPointer++) {
             Command c = commands.get(cPointer);
-            if(!(c instanceof LoopCommand)&&!(c instanceof EndLoopCommand)&&defaultDelay!=0){
+            if (!(c instanceof LoopCommand) && !(c instanceof EndLoopCommand) && defaultDelay != 0) {
                 try {
                     Thread.sleep(defaultDelay);
-                }catch(InterruptedException exc){
+                } catch (InterruptedException exc) {
                     exc.printStackTrace();
                 }
             }
@@ -141,70 +150,77 @@ public class Main {
 
     /**
      * Returns the current Command Pointer
+     *
      * @return Current Command Pointer
      */
-    public static int getCurrentCommandPointer(){
+    public static int getCurrentCommandPointer() {
         return cPointer;
     }
 
     /**
      * Sets the Command Pointer to pointer
+     *
      * @param pointer The Index of the Command to be executed next
      */
-    public static void setNextCommandPointer(int pointer){
+    public static void setNextCommandPointer(int pointer) {
         cPointer = pointer - 1;
     }
 
     /**
      * Returns the Current "Deepness" of Loops
+     *
      * @return Deepness of current Loop
      */
-    public static int getLoopDeepness(){
+    public static int getLoopDeepness() {
         return loopDeepness;
     }
 
     /**
      * Adds 1 to loopDeepness to indicate a new Loop
      */
-    public static void goIntoLoop(){
+    public static void goIntoLoop() {
         loopDeepness++;
     }
 
     /**
      * Substracts 1 from loopDeepness to indicate that a Loop has been exited
      */
-    public static void exitLoop(){
+    public static void exitLoop() {
         loopDeepness--;
     }
 
     /**
      * Returns the Command List
+     *
      * @return Command List
      */
-    public static ArrayList<Command> getCommands(){
+    public static ArrayList<Command> getCommands() {
         return commands;
     }
 
     /**
      * Returns the LoopCommand corresponding to the given Loop (depth)
+     *
      * @param loop Loop (depth)
      * @return CommandPointer of Loop
      */
-    public static LoopCommand getLoopEntry(int loop){
+    public static LoopCommand getLoopEntry(int loop) {
         return loopEntries.get(loop);
     }
 
     /**
      * Sets the Pointer (LoopCommand) to the corresponding Loop (depth)
-     * @param loop Loop (depth)
+     *
+     * @param loop    Loop (depth)
      * @param pointer CommandPointer
      */
-    public static void setLoopEntry(int loop, LoopCommand pointer){
-        loopEntries.put(loop,pointer);
+    public static void setLoopEntry(int loop, LoopCommand pointer) {
+        loopEntries.put(loop, pointer);
     }
 
     /**
      * Sets the Default Delay
+     *
      * @param defaultDelay Default Delay for Commands
      */
     public static void setDefaultDelay(Long defaultDelay) {
@@ -213,9 +229,14 @@ public class Main {
 
     /**
      * Returns the Default Delay between every Command
+     *
      * @return The Default Delay
      */
-    public static long getDefaultDelay(){
+    public static long getDefaultDelay() {
         return defaultDelay;
+    }
+
+    public static boolean isWindowsMachine() {
+        return windowsMachine;
     }
 }
