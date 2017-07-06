@@ -1,12 +1,7 @@
 package com.robot;
 
-import sun.nio.cs.UnicodeEncoder;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetEncoder;
 import java.util.ArrayList;
 
 /**
@@ -76,6 +71,10 @@ public class MyRobot extends Robot {
                 }
                 case '~': {
                     typeTilde();
+                    break;
+                }
+                case '^': {
+                    typeCircumflex();
                     break;
                 }
                 case '=': {
@@ -171,7 +170,7 @@ public class MyRobot extends Robot {
                     try {
                         keyPress(c);
                         keyRelease(c);
-                    }catch (IllegalArgumentException iae){
+                    } catch (IllegalArgumentException iae) {
                         System.err.println();
                         System.err.println("##########################################################################");
                         System.err.println("#                                                                        #");
@@ -186,6 +185,29 @@ public class MyRobot extends Robot {
                     }
                     break;
             }
+        }
+    }
+
+    private void typeCircumflex() {
+        if (Main.isWindowsMachine()) {
+            keyPress(KeyEvent.VK_ALT);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD0);
+            typeKey(KeyEvent.VK_NUMPAD9);
+            typeKey(KeyEvent.VK_NUMPAD4);
+            keyRelease(KeyEvent.VK_ALT);
+        } else {
+            keyPress(KeyEvent.VK_CONTROL);
+            keyPress(KeyEvent.VK_SHIFT);
+            keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_5);
+            typeKey(KeyEvent.VK_E);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 

@@ -7,7 +7,6 @@ import com.robot.commands.LoopCommand;
 import java.awt.*;
 import java.io.*;
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -62,12 +61,8 @@ public class Main {
     public static void main(String[] args) {
         loopEntries = new HashMap<Integer, LoopCommand>();
 
-        if (System.getProperty("os.name").contains("Win")
-                || System.getProperty("os.name").contains("win")) {
-            windowsMachine = true;
-        } else {
-            windowsMachine = false;
-        }
+        windowsMachine = System.getProperty("os.name").contains("Win")
+                || System.getProperty("os.name").contains("win");
 
         String system = (isWindowsMachine()) ? "WINDOWS" : "OTHER (Run as Linux script)";
         System.out.println("OPERATING SYSTEM: " + system + "\n");
