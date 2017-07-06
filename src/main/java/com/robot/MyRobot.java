@@ -196,7 +196,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD9);
             typeKey(KeyEvent.VK_NUMPAD4);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -219,7 +219,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD6);
             typeKey(KeyEvent.VK_NUMPAD4);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -242,7 +242,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD6);
             typeKey(KeyEvent.VK_NUMPAD2);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -265,7 +265,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD6);
             typeKey(KeyEvent.VK_NUMPAD0);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -288,7 +288,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD4);
             typeKey(KeyEvent.VK_NUMPAD2);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -311,7 +311,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD2);
             typeKey(KeyEvent.VK_NUMPAD6);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -334,7 +334,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD9);
             typeKey(KeyEvent.VK_NUMPAD5);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -357,7 +357,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD3);
             typeKey(KeyEvent.VK_NUMPAD8);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -380,7 +380,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD3);
             typeKey(KeyEvent.VK_NUMPAD7);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -403,7 +403,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD6);
             typeKey(KeyEvent.VK_NUMPAD7);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -426,7 +426,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD3);
             typeKey(KeyEvent.VK_NUMPAD6);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -449,7 +449,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD2);
             typeKey(KeyEvent.VK_NUMPAD4);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -472,7 +472,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD3);
             typeKey(KeyEvent.VK_NUMPAD9);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -495,7 +495,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD3);
             typeKey(KeyEvent.VK_NUMPAD4);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -518,7 +518,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD6);
             typeKey(KeyEvent.VK_NUMPAD1);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -541,7 +541,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD2);
             typeKey(KeyEvent.VK_NUMPAD3);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -564,7 +564,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD2);
             typeKey(KeyEvent.VK_NUMPAD0);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -587,7 +587,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD5);
             typeKey(KeyEvent.VK_NUMPAD2);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -610,7 +610,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD4);
             typeKey(KeyEvent.VK_NUMPAD6);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -633,7 +633,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD1);
             typeKey(KeyEvent.VK_NUMPAD4);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -656,7 +656,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD2);
             typeKey(KeyEvent.VK_NUMPAD8);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -679,7 +679,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD9);
             typeKey(KeyEvent.VK_NUMPAD6);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -702,7 +702,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD9);
             typeKey(KeyEvent.VK_NUMPAD3);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -725,7 +725,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD9);
             typeKey(KeyEvent.VK_NUMPAD1);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -748,7 +748,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD2);
             typeKey(KeyEvent.VK_NUMPAD5);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -771,7 +771,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD2);
             typeKey(KeyEvent.VK_NUMPAD3);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -794,7 +794,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD4);
             typeKey(KeyEvent.VK_NUMPAD0);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -817,7 +817,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD4);
             typeKey(KeyEvent.VK_NUMPAD1);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -841,7 +841,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD9);
             typeKey(KeyEvent.VK_NUMPAD2);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -864,7 +864,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD3);
             typeKey(KeyEvent.VK_NUMPAD3);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -887,7 +887,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD6);
             typeKey(KeyEvent.VK_NUMPAD3);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -910,7 +910,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD5);
             typeKey(KeyEvent.VK_NUMPAD9);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -933,7 +933,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD5);
             typeKey(KeyEvent.VK_NUMPAD8);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
@@ -956,7 +956,7 @@ public class MyRobot extends Robot {
             typeKey(KeyEvent.VK_NUMPAD4);
             typeKey(KeyEvent.VK_NUMPAD7);
             keyRelease(KeyEvent.VK_ALT);
-        } else {
+        } else if(Main.isLinuxMachine()){
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);

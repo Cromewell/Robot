@@ -7,8 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="897ca9b4-fb70-49d3-b53c-8c741f92de39" name="Default" comment="fix">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robot/FileParser.java" afterPath="$PROJECT_DIR$/src/main/java/com/robot/FileParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robot/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/robot/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/robot/MyRobot.java" afterPath="$PROJECT_DIR$/src/main/java/com/robot/MyRobot.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -26,10 +26,14 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/robot/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2558">
-              <caret line="72" column="34" lean-forward="false" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
+            <state relative-caret-position="315">
+              <caret line="82" column="60" lean-forward="false" selection-start-line="82" selection-start-column="60" selection-end-line="82" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#8692#8693#0" expanded="true" />
+                <element signature="e#8727#8728#0" expanded="true" />
+                <element signature="e#8771#8772#0" expanded="true" />
+                <element signature="e#8804#8805#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,8 +80,8 @@
       <file leaf-file-name="MyRobot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/robot/MyRobot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="176" column="31" lean-forward="false" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="31" />
+            <state relative-caret-position="-165">
+              <caret line="958" column="41" lean-forward="false" selection-start-line="958" selection-start-column="41" selection-end-line="958" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -167,8 +171,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/robot/commands/KeyChainCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/robot/commands/DelayCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/robot/commands/ClickerCommand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/robot/MyRobot.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/robot/FileParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/robot/MyRobot.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/robot/Main.java" />
       </list>
     </option>
@@ -806,6 +810,10 @@
           <caret line="13" column="77" lean-forward="false" selection-start-line="13" selection-start-column="77" selection-end-line="13" selection-end-column="77" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8692#8693#0" expanded="true" />
+            <element signature="e#8727#8728#0" expanded="true" />
+            <element signature="e#8771#8772#0" expanded="true" />
+            <element signature="e#8804#8805#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -844,6 +852,10 @@
           <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8692#8693#0" expanded="true" />
+            <element signature="e#8727#8728#0" expanded="true" />
+            <element signature="e#8771#8772#0" expanded="true" />
+            <element signature="e#8804#8805#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -882,6 +894,10 @@
           <caret line="31" column="65" lean-forward="false" selection-start-line="31" selection-start-column="65" selection-end-line="31" selection-end-column="65" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8692#8693#0" expanded="true" />
+            <element signature="e#8727#8728#0" expanded="true" />
+            <element signature="e#8771#8772#0" expanded="true" />
+            <element signature="e#8804#8805#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -920,6 +936,10 @@
           <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8692#8693#0" expanded="true" />
+            <element signature="e#8727#8728#0" expanded="true" />
+            <element signature="e#8771#8772#0" expanded="true" />
+            <element signature="e#8804#8805#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -948,6 +968,10 @@
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8692#8693#0" expanded="true" />
+            <element signature="e#8727#8728#0" expanded="true" />
+            <element signature="e#8771#8772#0" expanded="true" />
+            <element signature="e#8804#8805#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -968,6 +992,10 @@
           <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8692#8693#0" expanded="true" />
+            <element signature="e#8727#8728#0" expanded="true" />
+            <element signature="e#8771#8772#0" expanded="true" />
+            <element signature="e#8804#8805#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1179,8 +1207,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/robot/MyRobot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="176" column="31" lean-forward="false" selection-start-line="176" selection-start-column="24" selection-end-line="176" selection-end-column="31" />
+        <state relative-caret-position="-165">
+          <caret line="958" column="41" lean-forward="false" selection-start-line="958" selection-start-column="41" selection-end-line="958" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1189,10 +1217,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/robot/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2558">
-          <caret line="72" column="34" lean-forward="false" selection-start-line="72" selection-start-column="34" selection-end-line="72" selection-end-column="34" />
+        <state relative-caret-position="315">
+          <caret line="82" column="60" lean-forward="false" selection-start-line="82" selection-start-column="60" selection-end-line="82" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#8692#8693#0" expanded="true" />
+            <element signature="e#8727#8728#0" expanded="true" />
+            <element signature="e#8771#8772#0" expanded="true" />
+            <element signature="e#8804#8805#0" expanded="true" />
           </folding>
         </state>
       </provider>

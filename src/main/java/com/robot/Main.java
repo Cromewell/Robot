@@ -64,6 +64,8 @@ public class Main {
     private final static String runDebbugingMode = "-d";
 
     private static boolean windowsMachine;
+    private static boolean linuxMachine;
+    private static boolean macMachine;
 
     public static void main(String[] args) {
         if (Arrays.toString(args).contains(" " + runDebbugingMode)) {
@@ -72,12 +74,13 @@ public class Main {
 
         loopEntries = new HashMap<>();
 
-        windowsMachine = System.getProperty("os.name").contains("Win")
-                || System.getProperty("os.name").contains("win");
+        String osName = System.getProperty("os.name").toLowerCase();
+        windowsMachine = osName.contains("win");
+        linuxMachine = osName.contains("nux");
+        macMachine = osName.contains("mac");
 
         if (FileParser.isDebugging()) {
-            String system = (isWindowsMachine()) ? "WINDOWS" : "OTHER (Run as Linux script)";
-            System.out.println("OPERATING SYSTEM: " + system + "\n");
+            System.out.println("OPERATING SYSTEM: " + osName + "\n");
         }
 
         int convert = -1;
@@ -264,5 +267,13 @@ public class Main {
 
     public static boolean isWindowsMachine() {
         return windowsMachine;
+    }
+
+    public static boolean isLinuxMachine() {
+        return linuxMachine;
+    }
+
+    public static boolean isMacMachine() {
+        return macMachine;
     }
 }
