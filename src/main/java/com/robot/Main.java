@@ -8,6 +8,7 @@ import java.awt.*;
 import java.io.*;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -47,7 +48,7 @@ public class Main {
     private final static String convertToDuckyCommand = "-c2D";
 
     /**
-     * Command to convert to RobotScript
+     * Command to convert to RoboScript
      */
     private final static String convertToRobotCommand = "-c2R";
 
@@ -56,16 +57,28 @@ public class Main {
      */
     private final static String runDuckyCommand = "-rD";
 
+
+    /**
+     * Command to run in debug mode
+     */
+    private final static String runDebbugingMode = "-d";
+
     private static boolean windowsMachine;
 
     public static void main(String[] args) {
-        loopEntries = new HashMap<Integer, LoopCommand>();
+        if (Arrays.toString(args).contains(" " + runDebbugingMode)) {
+            FileParser.setDebugging(true);
+        }
+
+        loopEntries = new HashMap<>();
 
         windowsMachine = System.getProperty("os.name").contains("Win")
                 || System.getProperty("os.name").contains("win");
 
-        String system = (isWindowsMachine()) ? "WINDOWS" : "OTHER (Run as Linux script)";
-        System.out.println("OPERATING SYSTEM: " + system + "\n");
+        if (FileParser.isDebugging()) {
+            String system = (isWindowsMachine()) ? "WINDOWS" : "OTHER (Run as Linux script)";
+            System.out.println("OPERATING SYSTEM: " + system + "\n");
+        }
 
         int convert = -1;
 
@@ -119,16 +132,29 @@ public class Main {
                 System.exit(0);
             } else if (convert == 3) {
                 String script = ScriptConverter.convertToRobot(commandFile);
-                System.out.println(script);
                 StringReader sr = new StringReader(script);
                 reader = new BufferedReader(sr);
             }
         } catch (IOException exc) {
+            System.err.println();
+            System.err.println("##########################################################################");
+            System.err.println("#                                                                        #");
+            System.err.println("#              ERROR WHILE READING OR WRITING (TO) FILE                  #");
+            System.err.println("#                                                                        #");
+            System.err.println("##########################################################################");
+            System.err.println();
             exc.printStackTrace();
         }
         try {
             myRobot = new MyRobot();
         } catch (AWTException e) {
+            System.err.println();
+            System.err.println("##########################################################################");
+            System.err.println("#                                                                        #");
+            System.err.println("#                   COULD NOT CREATE ROBOT INSTANCE                      #");
+            System.err.println("#                                                                        #");
+            System.err.println("##########################################################################");
+            System.err.println();
             e.printStackTrace();
         }
 

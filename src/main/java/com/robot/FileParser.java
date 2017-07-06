@@ -1,7 +1,6 @@
 package com.robot;
 
 import com.robot.commands.*;
-import javafx.scene.input.KeyCode;
 
 import java.awt.event.KeyEvent;
 import java.io.*;
@@ -13,7 +12,7 @@ import java.util.ArrayList;
  */
 public class FileParser {
 
-    private static final boolean DEBUGGING = true;
+    private static boolean debugging = false;
     private static boolean shouldExit = false;
     private static boolean clicking = false;
 
@@ -183,7 +182,7 @@ public class FileParser {
                                     builder.append(" ");
                                 }
                             }
-                            commands.add(new StringCommand(myRobot, builder.toString(), DEBUGGING));
+                            commands.add(new StringCommand(myRobot, builder.toString(), debugging));
                             finishedLine = true;
                             break;
                         }
@@ -195,49 +194,49 @@ public class FileParser {
                                     builder.append(" ");
                                 }
                             }
-                            commands.add(new StringNCommand(myRobot, builder.toString(), DEBUGGING));
+                            commands.add(new StringNCommand(myRobot, builder.toString(), debugging));
                             finishedLine = true;
                             break;
                         }
                         case "delay": {
-                            commands.add(new DelayCommand(myRobot, Integer.parseInt(line[1]), DEBUGGING));
+                            commands.add(new DelayCommand(myRobot, Integer.parseInt(line[1]), debugging));
                             finishedLine = true;
                             break;
                         }
                         case "mouse": {
-                            commands.add(new MouseCommand(myRobot, Integer.valueOf(line[1]), Integer.valueOf(line[2]), DEBUGGING));
+                            commands.add(new MouseCommand(myRobot, Integer.valueOf(line[1]), Integer.valueOf(line[2]), debugging));
                             finishedLine = true;
                             break;
                         }
                         case "mouseD": {
-                            commands.add(new MouseDCommand(myRobot, Integer.valueOf(line[1]), Integer.valueOf(line[2]), Integer.valueOf(line[3]), DEBUGGING));
+                            commands.add(new MouseDCommand(myRobot, Integer.valueOf(line[1]), Integer.valueOf(line[2]), Integer.valueOf(line[3]), debugging));
                             finishedLine = true;
                             break;
                         }
                         case "mouseL": {
-                            commands.add(new MouseLCommand(myRobot, DEBUGGING));
+                            commands.add(new MouseLCommand(myRobot, debugging));
                             break;
                         }
                         case "mouseR": {
-                            commands.add(new MouseRCommand(myRobot, DEBUGGING));
+                            commands.add(new MouseRCommand(myRobot, debugging));
                             break;
                         }
                         case "clicker": {
-                            commands.add(new ClickerCommand(myRobot, Integer.parseInt(line[1]), Integer.parseInt(line[2]), inputManager, DEBUGGING));
+                            commands.add(new ClickerCommand(myRobot, Integer.parseInt(line[1]), Integer.parseInt(line[2]), inputManager, debugging));
                             finishedLine = true;
                             break;
                         }
                         case "loop": {
                             if (line.length == 2) {
-                                commands.add(new LoopCommand(myRobot, DEBUGGING, Integer.valueOf(line[1])));
+                                commands.add(new LoopCommand(myRobot, debugging, Integer.valueOf(line[1])));
                                 finishedLine = true;
                             } else {
-                                commands.add(new LoopCommand(myRobot, DEBUGGING, -1));
+                                commands.add(new LoopCommand(myRobot, debugging, -1));
                             }
                             break;
                         }
                         case "end": {
-                            commands.add(new EndLoopCommand(myRobot, DEBUGGING));
+                            commands.add(new EndLoopCommand(myRobot, debugging));
                             break;
                         }
                         case "defaultdelay":{
@@ -302,7 +301,7 @@ public class FileParser {
                     }
                 }
                 if (toExecute.size() > 0) {
-                    commands.add(new KeyChainCommand(myRobot, new ArrayList<>(toExecute), new ArrayList<>(toExCommands), DEBUGGING));
+                    commands.add(new KeyChainCommand(myRobot, new ArrayList<>(toExecute), new ArrayList<>(toExCommands), debugging));
                 }
                 toExecute.clear();
                 toExCommands.clear();
@@ -327,5 +326,13 @@ public class FileParser {
 
     public static void setShouldExit(boolean shouldExit) {
         FileParser.shouldExit = shouldExit;
+    }
+
+    public static boolean isDebugging() {
+        return debugging;
+    }
+
+    public static void setDebugging(boolean debugging) {
+        FileParser.debugging = debugging;
     }
 }
