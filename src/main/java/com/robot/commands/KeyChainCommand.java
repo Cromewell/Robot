@@ -26,7 +26,7 @@ public class KeyChainCommand extends Command {
         if (isDebug()) {
             //System.out.println(Arrays.toString(new ArrayList[]{getKeys()}));
             for (int key : keys) {
-                System.out.println("pressing " + KeyEvent.getKeyText(key));
+                System.out.println("PRESSING: " + KeyEvent.getKeyText(key));
             }
         }
     }

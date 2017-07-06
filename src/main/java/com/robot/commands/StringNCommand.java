@@ -23,7 +23,7 @@ public class StringNCommand extends Command {
         getMyRobot().typeKey(KeyEvent.VK_ENTER);
 
         if (isDebug()) {
-            System.out.println("typing " + toType);
+            System.out.println("TYPING: " + toType);
         }
     }
 

@@ -16,7 +16,7 @@ public class MouseLCommand extends Command {
     @Override
     public void execute() {
         if (isDebug()) {
-            System.out.println("left mouse button clicked");
+            System.out.println("LEFT MOUSE BUTTON CLICKED!");
         }
 
         getMyRobot().typeButton(MouseEvent.BUTTON1);

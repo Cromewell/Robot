@@ -6,6 +6,8 @@ import com.robot.commands.LoopCommand;
 
 import java.awt.*;
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -67,7 +69,8 @@ public class Main {
             windowsMachine = false;
         }
 
-        System.out.println("WINDOWS? :"+ isWindowsMachine());
+        String system = (isWindowsMachine()) ? "WINDOWS" : "OTHER (Run as Linux script)";
+        System.out.println("OPERATING SYSTEM: " + system + "\n");
 
         int convert = -1;
 
@@ -92,7 +95,7 @@ public class Main {
         BufferedReader reader = null;
         try {
             if (convert == -1) {
-                reader = new BufferedReader(new FileReader(commandFile));
+                reader = new BufferedReader(new InputStreamReader(new FileInputStream(commandFile), Charset.forName("UTF-8")));
             } else if (convert == 1) {
                 String script = ScriptConverter.convertToDucky(commandFile);
                 File f = new File(commandFile.getName() + ".ducky");

@@ -1,8 +1,12 @@
 package com.robot;
 
+import sun.nio.cs.UnicodeEncoder;
+
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.security.Key;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
+import java.nio.charset.CharsetEncoder;
 import java.util.ArrayList;
 
 /**
@@ -50,7 +54,7 @@ public class MyRobot extends Robot {
                     typeDollarSign();
                     break;
                 }
-                case '\u00A7': {
+                case '§': {
                     typeParagraphSign();
                     break;
                 }
@@ -164,8 +168,19 @@ public class MyRobot extends Robot {
                     if (Character.isUpperCase(s.charAt(i))) {
                         keyPress(KeyEvent.VK_SHIFT);
                     }
-                    keyPress(c);
-                    keyRelease(c);
+                    try {
+                        keyPress(c);
+                        keyRelease(c);
+                    }catch (IllegalArgumentException iae){
+                        System.err.println();
+                        System.err.println("##########################################################################");
+                        System.err.println("#                                                                        #");
+                        System.err.println("# Invalid key code! Script file has to be enoceded in UTF-8 without BOM! #");
+                        System.err.println("#                                                                        #");
+                        System.err.println("##########################################################################");
+                        System.err.println();
+                        System.exit(1);
+                    }
                     if (Character.isUpperCase(s.charAt(i))) {
                         keyRelease(KeyEvent.VK_SHIFT);
                     }

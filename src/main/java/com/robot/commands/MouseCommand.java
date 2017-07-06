@@ -19,7 +19,7 @@ public class MouseCommand extends Command {
     @Override
     public void execute() {
         if (isDebug()) {
-            System.out.println("setting mouse to " + x + " x and " + y + " y");
+            System.out.println("SETTING MOUSE TO " + x + " = x AND " + y + " = y");
         }
 
         getMyRobot().mouseMove(x, y);

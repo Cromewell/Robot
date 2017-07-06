@@ -16,11 +16,11 @@ public class DelayCommand extends Command {
 
     @Override
     public void execute() {
-        getMyRobot().delay(time);
-
         if (isDebug()) {
-            System.out.println("waiting " + time + " ms");
+            System.out.println("WAITING " + time + " ms ...");
         }
+
+        getMyRobot().delay(time);
     }
 
     public int getDelay(){

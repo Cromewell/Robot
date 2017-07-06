@@ -20,7 +20,7 @@ public class StringCommand extends Command {
         getMyRobot().typeString(toType);
 
         if (isDebug()) {
-            System.out.println("typing " + toType);
+            System.out.println("TYPING: " + toType);
         }
     }
 

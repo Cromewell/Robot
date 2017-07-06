@@ -29,8 +29,8 @@ public class ClickerCommand extends Command {
     @Override
     public void execute() {
         if (isDebug()) {
-            System.out.println("clicker activated");
-            System.out.println("clicks to go " + amount + " with a delay of " + delay + " ms");
+            System.out.println("CLICKER ACTIVATED!");
+            System.out.println("CLICKS TO GO " + amount + " WITH A DELAY OF " + delay + " ms");
         }
 
         try {
