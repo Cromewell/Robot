@@ -1,0 +1,7 @@
+gui r
+delay 300
+string notepad
+delay 100
+enter
+stringN !"§$%&/()=?*'_:;{[]}\~|<>@
+string They work!

@@ -67,6 +67,8 @@ public class Main {
             windowsMachine = false;
         }
 
+        System.out.println("WINDOWS? :"+ isWindowsMachine());
+
         int convert = -1;
 
         if (args.length < 1) {

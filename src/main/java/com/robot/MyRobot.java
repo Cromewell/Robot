@@ -50,7 +50,7 @@ public class MyRobot extends Robot {
                     typeDollarSign();
                     break;
                 }
-                case '§': {
+                case '\u00A7': {
                     typeParagraphSign();
                     break;
                 }
@@ -186,13 +186,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_4);
             typeKey(KeyEvent.VK_0);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -208,13 +209,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_3);
             typeKey(KeyEvent.VK_E);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -230,13 +232,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_3);
             typeKey(KeyEvent.VK_C);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -252,13 +255,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_2);
             typeKey(KeyEvent.VK_A);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -274,13 +278,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_7);
             typeKey(KeyEvent.VK_E);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -296,13 +301,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_5);
             typeKey(KeyEvent.VK_F);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -318,13 +324,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_2);
             typeKey(KeyEvent.VK_6);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -340,13 +347,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_2);
             typeKey(KeyEvent.VK_5);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -362,13 +370,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_A);
             typeKey(KeyEvent.VK_7);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -384,13 +393,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_2);
             typeKey(KeyEvent.VK_4);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -406,13 +416,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_7);
             typeKey(KeyEvent.VK_C);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -428,13 +439,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_2);
             typeKey(KeyEvent.VK_7);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -450,13 +462,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
-            typeKey(KeyEvent.VK_0);
-            typeKey(KeyEvent.VK_0);
-            typeKey(KeyEvent.VK_2);
-            typeKey(KeyEvent.VK_2);
             keyRelease(KeyEvent.VK_CONTROL);
             keyRelease(KeyEvent.VK_SHIFT);
             keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_0);
+            typeKey(KeyEvent.VK_2);
+            typeKey(KeyEvent.VK_2);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -472,13 +485,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_3);
             typeKey(KeyEvent.VK_D);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -494,13 +508,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_D);
             typeKey(KeyEvent.VK_F);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -516,13 +531,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_D);
             typeKey(KeyEvent.VK_C);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -538,13 +554,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_F);
             typeKey(KeyEvent.VK_C);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -560,13 +577,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_F);
             typeKey(KeyEvent.VK_6);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -582,13 +600,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_D);
             typeKey(KeyEvent.VK_6);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -604,13 +623,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_E);
             typeKey(KeyEvent.VK_4);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -626,13 +646,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_C);
             typeKey(KeyEvent.VK_4);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -648,13 +669,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_5);
             typeKey(KeyEvent.VK_D);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -670,13 +692,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_5);
             typeKey(KeyEvent.VK_B);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -692,13 +715,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_7);
             typeKey(KeyEvent.VK_D);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -714,13 +738,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_7);
             typeKey(KeyEvent.VK_B);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -736,13 +761,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_2);
             typeKey(KeyEvent.VK_8);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -758,13 +784,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_2);
             typeKey(KeyEvent.VK_9);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -781,13 +808,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_5);
             typeKey(KeyEvent.VK_C);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -803,13 +831,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_2);
             typeKey(KeyEvent.VK_1);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -825,13 +854,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_3);
             typeKey(KeyEvent.VK_F);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -847,13 +877,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_3);
             typeKey(KeyEvent.VK_B);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -869,13 +900,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_3);
             typeKey(KeyEvent.VK_A);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
@@ -891,13 +923,14 @@ public class MyRobot extends Robot {
             keyPress(KeyEvent.VK_CONTROL);
             keyPress(KeyEvent.VK_SHIFT);
             keyPress(KeyEvent.VK_U);
+            keyRelease(KeyEvent.VK_CONTROL);
+            keyRelease(KeyEvent.VK_SHIFT);
+            keyRelease(KeyEvent.VK_U);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_0);
             typeKey(KeyEvent.VK_2);
             typeKey(KeyEvent.VK_F);
-            keyRelease(KeyEvent.VK_CONTROL);
-            keyRelease(KeyEvent.VK_SHIFT);
-            keyRelease(KeyEvent.VK_U);
+            typeKey(KeyEvent.VK_ENTER);
         }
     }
 
